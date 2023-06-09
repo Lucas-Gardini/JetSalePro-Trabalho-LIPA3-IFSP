@@ -63,9 +63,63 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert {
+            get {
+                object obj = ResourceManager.GetObject("alert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CREATE DATABASE IF NOT EXISTS jet_sale_pro;
+        ///
+        ///USE jet_sale_pro;
+        ///
+        ///CREATE TABLE IF NOT EXISTS produtos (
+        ///    codigo_produto INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+        ///    descricao VARCHAR(100) NOT NULL,
+        ///    codigo_barras INT(13) UNIQUE NOT NULL,
+        ///    marca VARCHAR(50) NOT NULL,
+        ///    peso FLOAT NOT NULL,
+        ///    largura FLOAT NOT NULL,
+        ///    altura FLOAT NOT NULL,
+        ///    profundidade FLOAT NOT NULL,
+        ///    situacao BOOLEAN NOT NULL,
+        ///    condicao VARCHAR(5) NOT NULL CHECK (condicao IN (&apos;Novo&apos;, &apos;Usado&apos;)),
+        ///    preco_venda FLOAT  [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string database {
+            get {
+                return ResourceManager.GetString("database", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Invisible {
             get {
                 object obj = ResourceManager.GetObject("Invisible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Invisible1 {
+            get {
+                object obj = ResourceManager.GetObject("Invisible1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,6 +137,16 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Login1 {
+            get {
+                object obj = ResourceManager.GetObject("Login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -93,9 +157,39 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_Round {
+        internal static System.Drawing.Bitmap Logo_Square {
             get {
-                object obj = ResourceManager.GetObject("Logo-Round", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo_Square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        internal static System.Drawing.Icon Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo2 {
+            get {
+                object obj = ResourceManager.GetObject("Logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap success {
+            get {
+                object obj = ResourceManager.GetObject("success", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
