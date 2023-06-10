@@ -63,9 +63,39 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alert {
             get {
                 object obj = ResourceManager.GetObject("alert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back1 {
+            get {
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,7 +116,7 @@ namespace JetSalePro.Properties {
         ///    profundidade FLOAT NOT NULL,
         ///    situacao BOOLEAN NOT NULL,
         ///    condicao VARCHAR(5) NOT NULL CHECK (condicao IN (&apos;Novo&apos;, &apos;Usado&apos;)),
-        ///    preco_venda FLOAT  [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///    pre [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string database {
             get {

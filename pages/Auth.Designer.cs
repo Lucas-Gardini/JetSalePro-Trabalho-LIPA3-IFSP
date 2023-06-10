@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PictureLogin = new System.Windows.Forms.PictureBox();
             this.TextBoxName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.CheckboxRemember = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogin)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +139,7 @@
             // 
             // ButtonLogin
             // 
-            this.ButtonLogin.Location = new System.Drawing.Point(314, 328);
+            this.ButtonLogin.Location = new System.Drawing.Point(313, 388);
             this.ButtonLogin.Name = "ButtonLogin";
             this.ButtonLogin.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
             this.ButtonLogin.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
@@ -198,7 +199,7 @@
             // 
             // ButtonRegister
             // 
-            this.ButtonRegister.Location = new System.Drawing.Point(117, 328);
+            this.ButtonRegister.Location = new System.Drawing.Point(116, 388);
             this.ButtonRegister.Name = "ButtonRegister";
             this.ButtonRegister.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ButtonRegister.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -261,6 +262,7 @@
             // 
             // LabelCopy
             // 
+            this.LabelCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelCopy.AutoSize = true;
             this.LabelCopy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCopy.Location = new System.Drawing.Point(789, 440);
@@ -311,12 +313,22 @@
             this.TextBoxName.Enter += new System.EventHandler(this.TextBoxName_Enter);
             this.TextBoxName.Leave += new System.EventHandler(this.TextBoxName_Leave);
             // 
+            // CheckboxRemember
+            // 
+            this.CheckboxRemember.Location = new System.Drawing.Point(37, 320);
+            this.CheckboxRemember.Name = "CheckboxRemember";
+            this.CheckboxRemember.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.CheckboxRemember.Size = new System.Drawing.Size(113, 22);
+            this.CheckboxRemember.TabIndex = 10;
+            this.CheckboxRemember.Values.Text = "Lembrar de mim";
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(905, 461);
+            this.Controls.Add(this.CheckboxRemember);
             this.Controls.Add(this.TextBoxName);
             this.Controls.Add(this.LabelCopy);
             this.Controls.Add(this.pictureBox1);
@@ -358,6 +370,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LabelCopy;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox TextBoxName;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox CheckboxRemember;
     }
 }
 

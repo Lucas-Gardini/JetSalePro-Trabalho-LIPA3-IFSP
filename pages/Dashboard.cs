@@ -1,6 +1,8 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using JetSalePro.pages;
 using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace JetSalePro {
     public partial class Dashboard : KryptonForm {
@@ -12,19 +14,26 @@ namespace JetSalePro {
         }
 
         private void Dashboard_Load(object sender, EventArgs e) {
+            this.Activate();
+
             LabelUser.Text = LabelUser.Text.Replace("USUARIO", Global.CurrentUser);
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
-			if (Global.Adm == false) {
-				ButtonClientes.Visible = false;
-				ButtonClientes.Enabled = false;
+            if (Global.Adm == false) {
+                ButtonClientes.Visible = false;
+                ButtonClientes.Enabled = false;
 
-				ButtonProdutos.Visible = false;
-				ButtonProdutos.Enabled = false;
+                ButtonProdutos.Visible = false;
+                ButtonProdutos.Enabled = false;
 
-				ButtonLiberacaoUsers.Visible = false;
-				ButtonLiberacaoUsers.Enabled = false;
-			}
+                ButtonLiberacaoUsers.Visible = false;
+                ButtonLiberacaoUsers.Enabled = false;
+            }
+        }
+
+        private void ButtonLiberacaoUsers_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new UserManagement())).Start();
         }
     }
 }

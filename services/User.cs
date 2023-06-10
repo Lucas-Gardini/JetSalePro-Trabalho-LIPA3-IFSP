@@ -1,6 +1,7 @@
 ﻿using JetSalePro.pages;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Data.Common;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -56,32 +57,29 @@ namespace JetSalePro.services {
             }
         }
 
-		public static async Task<bool> IsAdministrator(string username)
-		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+        public static async Task<bool> IsAdministrator(string username) {
+            MySqlConnection connection = await Database.GetConnectionAsync();
 
-			MySqlCommand command = new MySqlCommand($"SELECT adm FROM usuarios WHERE usuario = '{username}'", connection);
+            MySqlCommand command = new MySqlCommand($"SELECT adm FROM usuarios WHERE usuario = '{username}'", connection);
 
-			try
-			{
-				object result = await command.ExecuteScalarAsync();
-				if (result != null && result != DBNull.Value)
-				{
-					bool isAdmin = Convert.ToBoolean(result);
-					return isAdmin;
-				}
-			} catch (Exception ex) {
-				new Alert("Usuário", ex.Message).ShowDialog();
-			} finally {
-				connection.Close();
-			}
-			return false;
-		}
-		#endregion
+            try {
+                object result = await command.ExecuteScalarAsync();
+                if (result != null && result != DBNull.Value) {
+                    bool isAdmin = Convert.ToBoolean(result);
+                    return isAdmin;
+                }
+            } catch (Exception ex) {
+                new Alert("Usuário", ex.Message).ShowDialog();
+            } finally {
+                connection.Close();
+            }
+            return false;
+        }
+        #endregion
 
-		#region Funções relacionadas a Model
+        #region Funções relacionadas a Model
 
-		public static async Task<bool> CreateUser(User newUser) {
+        public static async Task<bool> CreateUser(User newUser) {
             MySqlConnection connection = await Database.GetConnectionAsync();
 
             MySqlCommand command = new MySqlCommand($"INSERT INTO usuarios (nome, usuario, senha, situacao, adm) VALUES ('{newUser.Nome}', '{newUser.Usuario}', '{CryptToSha256(newUser.Senha)}', '{SituacaoUsuario.Inativo}', {false})", connection);
@@ -97,6 +95,29 @@ namespace JetSalePro.services {
             }
         }
 
-		#endregion
-	}
+        public static async Task<DataTable> GetUsers(string WHERE = null) {
+            MySqlConnection connection = await Database.GetConnectionAsync();
+
+            MySqlCommand command = new MySqlCommand($"SELECT * FROM usuarios {WHERE}", connection);
+
+            try {
+                // Instância do DataTable (contém os dados) e do adapter (executa a query)
+                DataTable dataTable = new DataTable();
+
+                // Executando a query e preenchendo o DataTable
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+
+                // Preenchendo o DataTable
+                await adapter.FillAsync(dataTable);
+
+                return dataTable;
+            } catch (Exception ex) {
+                new Alert("Usuários", ex.Message).ShowDialog();
+                return null;
+            } finally {
+                connection.Close();
+            }
+        }
+        #endregion
+    }
 }

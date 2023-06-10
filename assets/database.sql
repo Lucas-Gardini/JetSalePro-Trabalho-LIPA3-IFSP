@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS produtos (
     condicao VARCHAR(5) NOT NULL CHECK (condicao IN ('Novo', 'Usado')),
     preco_venda FLOAT NOT NULL,
     quantidade_estoque INT NOT NULL,
-    data_cadastro DATE NOT NULL,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -43,7 +42,6 @@ CREATE TABLE IF NOT EXISTS clientes (
     uf VARCHAR(2) NOT NULL,
     cep INT(8) NOT NULL,
     observacoes VARCHAR(200) NOT NULL,
-    data_cadastro DATE NOT NULL,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

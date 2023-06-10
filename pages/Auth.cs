@@ -2,6 +2,8 @@
 using JetSalePro.pages;
 using JetSalePro.services;
 using System;
+using System.IO;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using static JetSalePro.services.User;
@@ -32,6 +34,39 @@ namespace JetSalePro {
             TextBoxName.Hide();
         }
 
+        // Função que escreve um texto em base64 em um arquivo
+        public static void WriteBase64ToFile(string filePath, string text) {
+            // Verifica se o arquivo já existe
+            if (!File.Exists(filePath)) {
+                // Cria o arquivo caso não exista
+                using (File.Create(filePath)) { }
+            }
+
+            // Converte o texto normal para base64
+            byte[] bytes = Encoding.UTF8.GetBytes(text);
+            string base64Text = Convert.ToBase64String(bytes);
+
+            // Escreve o texto em base64 no arquivo
+            File.WriteAllText(filePath, base64Text);
+        }
+
+        // Função que lê um arquivo e retorna seu conteúdo
+        public static string ReadFileBase64(string filePath) {
+            // Verifica se o arquivo existe
+            if (!File.Exists(filePath)) {
+                throw new FileNotFoundException("O arquivo não existe.");
+            }
+
+            // Lê o texto do arquivo
+            string text = File.ReadAllText(filePath);
+
+            // Converte o texto em base64 para uma string normal
+            byte[] bytes = Convert.FromBase64String(text);
+            string normalText = Encoding.UTF8.GetString(bytes);
+
+            return normalText;
+        }
+
         // Função de inicialização do componente, responsável por aguardar a criação do banco de dados
         private async void Login_Load(object sender, System.EventArgs e) {
             ButtonLogin.Cursor = Cursors.Hand;
@@ -41,7 +76,25 @@ namespace JetSalePro {
 
             loadingForm.ShowSplashScreen();
 
+            // Criando o banco (caso não exista)
             await Database.CreateDatabase();
+
+            // Verificando se o usuário mandou lembrar dele
+            try {
+                var remembered = ReadFileBase64(Application.StartupPath + "/secret.txt");
+
+                string user = remembered.Split('_')[0];
+                bool isADM = remembered.Contains("ADM");
+
+                Global.CurrentUser = user;
+                Global.Adm = isADM;
+
+                loadingForm.CloseForm();
+
+                this.Close();
+                new Thread(() => Application.Run(new Dashboard())).Start();
+                return;
+            } catch { }
 
             loadingForm.CloseForm();
 
@@ -140,6 +193,7 @@ namespace JetSalePro {
             string user = TextBoxUser.Text;
             string password = TextBoxPassword.Text;
             string name = TextBoxName.Text;
+            bool remember = CheckboxRemember.Checked;
 
             // Validação de campos
             if (user == string.Empty || user == "Usuário") {
@@ -171,11 +225,16 @@ namespace JetSalePro {
                     if (validUser == UserStatus.Approved) {
                         Global.CurrentUser = user;
 
-						if (await IsAdministrator(Global.CurrentUser)) {
-							Global.Adm = true;
-						}
+                        if (await IsAdministrator(Global.CurrentUser)) {
+                            Global.Adm = true;
+                        }
 
-						this.Close();
+                        if (remember) {
+                            string isAdm = Global.Adm ? "ADM" : "";
+                            WriteBase64ToFile(Application.StartupPath + "/secret.txt", $"{user}_{isAdm}");
+                        }
+
+                        this.Close();
                         new Thread(() => Application.Run(new Dashboard())).Start();
                     } else if (validUser == UserStatus.Invalid) {
                         Alert alert = new Alert("Erro no login", "Usuário aguardando aprovação ou credenciais inválidas!");
