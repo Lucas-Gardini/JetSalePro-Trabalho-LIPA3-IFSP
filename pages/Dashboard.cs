@@ -14,6 +14,17 @@ namespace JetSalePro {
         private void Dashboard_Load(object sender, EventArgs e) {
             LabelUser.Text = LabelUser.Text.Replace("USUARIO", Global.CurrentUser);
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
+
+			if (Global.Adm == false) {
+				ButtonClientes.Visible = false;
+				ButtonClientes.Enabled = false;
+
+				ButtonProdutos.Visible = false;
+				ButtonProdutos.Enabled = false;
+
+				ButtonLiberacaoUsers.Visible = false;
+				ButtonLiberacaoUsers.Enabled = false;
+			}
         }
     }
 }

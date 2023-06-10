@@ -171,7 +171,11 @@ namespace JetSalePro {
                     if (validUser == UserStatus.Approved) {
                         Global.CurrentUser = user;
 
-                        this.Close();
+						if (await IsAdministrator(Global.CurrentUser)) {
+							Global.Adm = true;
+						}
+
+						this.Close();
                         new Thread(() => Application.Run(new Dashboard())).Start();
                     } else if (validUser == UserStatus.Invalid) {
                         Alert alert = new Alert("Erro no login", "Usuário aguardando aprovação ou credenciais inválidas!");

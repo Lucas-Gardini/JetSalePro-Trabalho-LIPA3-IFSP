@@ -55,11 +55,33 @@ namespace JetSalePro.services {
                 connection.Close();
             }
         }
-        #endregion
 
-        #region Funções relacionadas a Model
+		public static async Task<bool> IsAdministrator(string username)
+		{
+			MySqlConnection connection = await Database.GetConnectionAsync();
 
-        public static async Task<bool> CreateUser(User newUser) {
+			MySqlCommand command = new MySqlCommand($"SELECT adm FROM usuarios WHERE usuario = '{username}'", connection);
+
+			try
+			{
+				object result = await command.ExecuteScalarAsync();
+				if (result != null && result != DBNull.Value)
+				{
+					bool isAdmin = Convert.ToBoolean(result);
+					return isAdmin;
+				}
+			} catch (Exception ex) {
+				new Alert("Usuário", ex.Message).ShowDialog();
+			} finally {
+				connection.Close();
+			}
+			return false;
+		}
+		#endregion
+
+		#region Funções relacionadas a Model
+
+		public static async Task<bool> CreateUser(User newUser) {
             MySqlConnection connection = await Database.GetConnectionAsync();
 
             MySqlCommand command = new MySqlCommand($"INSERT INTO usuarios (nome, usuario, senha, situacao, adm) VALUES ('{newUser.Nome}', '{newUser.Usuario}', '{CryptToSha256(newUser.Senha)}', '{SituacaoUsuario.Inativo}', {false})", connection);
@@ -75,6 +97,6 @@ namespace JetSalePro.services {
             }
         }
 
-        #endregion
-    }
+		#endregion
+	}
 }

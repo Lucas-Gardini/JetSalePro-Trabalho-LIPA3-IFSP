@@ -95,4 +95,12 @@ INSERT INTO usuarios (nome, usuario, senha, situacao, adm)
 SELECT 'Master', 'master', '/GE7Tf1nNqe9JoyKDnTtDRwEqVn1nddO8odJg/1EP8k=', TRUE, TRUE
 WHERE NOT EXISTS (
     SELECT 1 FROM usuarios WHERE usuario = 'master'
+    /* senha = master */
+);
+
+INSERT INTO usuarios (nome, usuario, senha, situacao, adm)
+SELECT 'Vendedor', 'comum', 'Wlb23r7/o1Na789mdDtzwlEu8bQXVejp73u++qBH1TA=', TRUE, FALSE
+WHERE NOT EXISTS (
+    SELECT 1 FROM usuarios WHERE usuario = 'comum'
+    /* senha = comum */
 );
