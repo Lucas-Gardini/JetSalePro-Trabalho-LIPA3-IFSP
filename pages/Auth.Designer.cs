@@ -350,6 +350,7 @@
             this.Text = "JetSale Pro";
             this.Load += new System.EventHandler(this.Login_Load);
             this.SizeChanged += new System.EventHandler(this.Login_SizeChanged);
+            this.Resize += new System.EventHandler(this.Auth_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureLogin)).EndInit();
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using JetSalePro.pages;
+using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;
 using System.IO;
@@ -21,9 +22,9 @@ namespace JetSalePro.services {
 
                 return true;
             } catch (Exception ex) {
-                MessageBox.Show("Erro ao iniciar o banco de dados\n" + ex.Message);
+                new Alert("Erro ao iniciar o banco de dados", ex.Message).ShowDialog();
                 Application.Exit();
-            } finally { connection.Close(); }
+            } finally { connection?.Close(); }
 
             return true;
         }

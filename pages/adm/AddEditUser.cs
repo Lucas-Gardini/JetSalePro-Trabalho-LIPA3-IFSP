@@ -17,6 +17,8 @@ namespace JetSalePro {
             InitializeComponent();
 
             _user.CodigoUsuario = int.Parse(userId);
+
+            LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
         }
 
         private void GoBack(object sender, EventArgs e) {
@@ -29,7 +31,13 @@ namespace JetSalePro {
             var user = await User.GetUsers($"WHERE codigo_usuario = {_user.CodigoUsuario}");
 
             if (user != null) {
+                TextBoxCod.Text = user.Rows[0]["codigo_usuario"].ToString();
+                TextBoxName.Text = user.Rows[0]["nome"].ToString();
+                TextBoxUsername.Text = user.Rows[0]["usuario"].ToString();
+                TextBoxPassword.Text = "******";
 
+                CheckboxActive.Checked = (bool)user.Rows[0]["situacao"];
+                CheckBoxAdm.Checked = (bool)user.Rows[0]["adm"];
             } else {
                 new Alert("Usuário", "Usuário não encontrado!").ShowDialog();
             }
@@ -54,6 +62,37 @@ namespace JetSalePro {
                 GraphicsUnit.Pixel,
                 imageAttributes
             );
+        }
+
+        private async void ButtonSalvar_Click(object sender, EventArgs e) {
+            loadingForm.Show();
+            loadingForm.Refresh();
+
+            if (!TextBoxPassword.Text.StartsWith("**")) {
+                _user.Senha = TextBoxPassword.Text;
+            }
+
+            _user.Nome = TextBoxName.Text;
+            _user.Usuario = TextBoxUsername.Text;
+            _user.Situacao = CheckboxActive.Checked;
+            _user.Adm = CheckBoxAdm.Checked;
+
+            bool sucesso;
+            if (_user.CodigoUsuario == -1) {
+                sucesso = await User.CreateUser(_user);
+            } else {
+                sucesso = await User.UpdateUser(_user, _user.Senha != null);
+            }
+
+            loadingForm.Close();
+
+            if (sucesso) {
+                new Success("Usuário", "Usuário salvo com sucesso!").ShowDialog();
+
+                this.Close();
+            } else {
+                new Alert("Usuário", "Erro ao salvar usuário!").ShowDialog();
+            }
         }
     }
 }

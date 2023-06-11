@@ -82,7 +82,7 @@ namespace JetSalePro.services {
         public static async Task<bool> CreateUser(User newUser) {
             MySqlConnection connection = await Database.GetConnectionAsync();
 
-            MySqlCommand command = new MySqlCommand($"INSERT INTO usuarios (nome, usuario, senha, situacao, adm) VALUES ('{newUser.Nome}', '{newUser.Usuario}', '{CryptToSha256(newUser.Senha)}', '{SituacaoUsuario.Inativo}', {false})", connection);
+            MySqlCommand command = new MySqlCommand($"INSERT INTO usuarios (nome, usuario, senha, situacao, adm) VALUES ('{newUser.Nome}', '{newUser.Usuario}', '{CryptToSha256(newUser.Senha)}', {(newUser.Situacao ? 1 : 0)}, {newUser.Adm})", connection);
 
             try {
                 await command.ExecuteNonQueryAsync();
@@ -94,6 +94,47 @@ namespace JetSalePro.services {
                 connection.Close();
             }
         }
+
+        public static async Task<bool> UpdateUser(User user, bool updatePassword) {
+            MySqlConnection connection = await Database.GetConnectionAsync();
+
+            string updateQuery = $"UPDATE usuarios SET nome = '{user.Nome}', usuario = '{user.Usuario}', situacao = {(user.Situacao ? 1 : 0)}, adm = {(user.Adm)}";
+
+            if (updatePassword) {
+                updateQuery += $", senha = '{CryptToSha256(user.Senha)}'";
+            }
+
+            updateQuery += $" WHERE codigo_usuario = {user.CodigoUsuario}";
+
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+
+            try {
+                await command.ExecuteNonQueryAsync();
+                return true;
+            } catch (Exception ex) {
+                new Alert("Usuário", ex.Message).ShowDialog();
+                return false;
+            } finally {
+                connection.Close();
+            }
+        }
+
+        public static async Task<bool> DeleteUser(string id) {
+            MySqlConnection connection = await Database.GetConnectionAsync();
+
+            MySqlCommand command = new MySqlCommand($"DELETE FROM usuarios WHERE codigo_usuario = {id}", connection);
+
+            try {
+                int rowsAffected = await command.ExecuteNonQueryAsync();
+                return rowsAffected > 0; // Retorna true se pelo menos uma linha foi afetada (usuário excluído com sucesso)
+            } catch (Exception ex) {
+                new Alert("Usuário", ex.Message).ShowDialog();
+                return false;
+            } finally {
+                connection.Close();
+            }
+        }
+
 
         public static async Task<DataTable> GetUsers(string WHERE = null) {
             MySqlConnection connection = await Database.GetConnectionAsync();

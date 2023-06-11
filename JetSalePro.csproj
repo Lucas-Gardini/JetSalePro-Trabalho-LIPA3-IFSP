@@ -228,6 +228,10 @@
     <None Include="assets\images\icons\success.png" />
     <None Include="assets\images\icons\back.png" />
     <None Include="assets\images\icons\add.png" />
+    <None Include="assets\images\icons\search.png" />
+    <None Include="assets\images\icons\delete.png" />
+    <None Include="assets\images\icons\edit.png" />
+    <None Include="assets\images\icons\user.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

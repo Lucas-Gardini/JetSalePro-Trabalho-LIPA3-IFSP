@@ -69,6 +69,13 @@ namespace JetSalePro {
 
         // Função de inicialização do componente, responsável por aguardar a criação do banco de dados
         private async void Login_Load(object sender, System.EventArgs e) {
+            if (Global.FormSize.Width != 0) {
+                this.Size = Global.FormSize;
+            }
+            this.Activate();
+
+            Global.FormResize(this);
+
             ButtonLogin.Cursor = Cursors.Hand;
             ButtonRegister.Cursor = Cursors.Hand;
 
@@ -273,6 +280,10 @@ namespace JetSalePro {
             if (e.KeyCode == Keys.Enter) {
                 this.ButtonLogin_Click(sender, e);
             }
+        }
+
+        private void Auth_Resize(object sender, EventArgs e) {
+            Global.FormResize(this);
         }
     }
 }

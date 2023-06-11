@@ -393,7 +393,6 @@
             this.Controls.Add(this.LabelUser);
             this.Controls.Add(this.LabelCopy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(540, 500);
             this.Name = "Dashboard";
             this.Palette = this.AppPalette;
@@ -401,6 +400,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JetSale Pro";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.Resize += new System.EventHandler(this.Dashboard_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

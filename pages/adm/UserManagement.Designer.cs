@@ -35,14 +35,22 @@
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.situacao = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.adm = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.criado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atualizado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PictureAdd = new System.Windows.Forms.PictureBox();
+            this.PictureSearch = new System.Windows.Forms.PictureBox();
+            this.PictureDelete = new System.Windows.Forms.PictureBox();
+            this.PictureEdit = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // AppPalette
@@ -140,7 +148,8 @@
             this.DataGridViewUsers.Location = new System.Drawing.Point(13, 56);
             this.DataGridViewUsers.Name = "DataGridViewUsers";
             this.DataGridViewUsers.ReadOnly = true;
-            this.DataGridViewUsers.Size = new System.Drawing.Size(880, 381);
+            this.DataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridViewUsers.Size = new System.Drawing.Size(823, 366);
             this.DataGridViewUsers.TabIndex = 12;
             // 
             // codigo_usuario
@@ -171,9 +180,11 @@
             // 
             // situacao
             // 
-            this.situacao.HeaderText = "Situação";
+            this.situacao.HeaderText = "Ativo";
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
+            this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.situacao.Width = 75;
             // 
             // adm
@@ -181,6 +192,8 @@
             this.adm.HeaderText = "Administrador";
             this.adm.Name = "adm";
             this.adm.ReadOnly = true;
+            this.adm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.adm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // criado_em
             // 
@@ -196,10 +209,10 @@
             // 
             // PictureAdd
             // 
-            this.PictureAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureAdd.Image = global::JetSalePro.Properties.Resources.add;
-            this.PictureAdd.Location = new System.Drawing.Point(650, 12);
+            this.PictureAdd.Location = new System.Drawing.Point(853, 252);
             this.PictureAdd.Name = "PictureAdd";
             this.PictureAdd.Size = new System.Drawing.Size(40, 38);
             this.PictureAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,12 +221,71 @@
             this.PictureAdd.WaitOnLoad = true;
             this.PictureAdd.Click += new System.EventHandler(this.PictureAdd_Click);
             // 
+            // PictureSearch
+            // 
+            this.PictureSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureSearch.Image = global::JetSalePro.Properties.Resources.search;
+            this.PictureSearch.Location = new System.Drawing.Point(854, 296);
+            this.PictureSearch.Name = "PictureSearch";
+            this.PictureSearch.Size = new System.Drawing.Size(40, 38);
+            this.PictureSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureSearch.TabIndex = 14;
+            this.PictureSearch.TabStop = false;
+            this.PictureSearch.WaitOnLoad = true;
+            this.PictureSearch.Click += new System.EventHandler(this.PictureSearch_Click);
+            // 
+            // PictureDelete
+            // 
+            this.PictureDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureDelete.Image = global::JetSalePro.Properties.Resources.delete;
+            this.PictureDelete.Location = new System.Drawing.Point(853, 384);
+            this.PictureDelete.Name = "PictureDelete";
+            this.PictureDelete.Size = new System.Drawing.Size(40, 38);
+            this.PictureDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureDelete.TabIndex = 15;
+            this.PictureDelete.TabStop = false;
+            this.PictureDelete.WaitOnLoad = true;
+            this.PictureDelete.Click += new System.EventHandler(this.PictureDelete_Click);
+            // 
+            // PictureEdit
+            // 
+            this.PictureEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureEdit.Image = global::JetSalePro.Properties.Resources.edit;
+            this.PictureEdit.Location = new System.Drawing.Point(853, 340);
+            this.PictureEdit.Name = "PictureEdit";
+            this.PictureEdit.Size = new System.Drawing.Size(40, 38);
+            this.PictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureEdit.TabIndex = 16;
+            this.PictureEdit.TabStop = false;
+            this.PictureEdit.WaitOnLoad = true;
+            this.PictureEdit.Click += new System.EventHandler(this.PictureEdit_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::JetSalePro.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(656, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.WaitOnLoad = true;
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(905, 461);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.PictureEdit);
+            this.Controls.Add(this.PictureDelete);
+            this.Controls.Add(this.PictureSearch);
             this.Controls.Add(this.PictureAdd);
             this.Controls.Add(this.DataGridViewUsers);
             this.Controls.Add(this.label2);
@@ -221,7 +293,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LabelCopy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(540, 500);
             this.Name = "UserManagement";
             this.Palette = this.AppPalette;
@@ -229,9 +300,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JetSale Pro";
             this.Load += new System.EventHandler(this.Form_Load);
+            this.Resize += new System.EventHandler(this.UserManagement_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,15 +321,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewUsers;
+        private System.Windows.Forms.PictureBox PictureAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adm;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn situacao;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn adm;
         private System.Windows.Forms.DataGridViewTextBoxColumn criado_em;
         private System.Windows.Forms.DataGridViewTextBoxColumn atualizado_em;
-        private System.Windows.Forms.PictureBox PictureAdd;
+        private System.Windows.Forms.PictureBox PictureSearch;
+        private System.Windows.Forms.PictureBox PictureDelete;
+        private System.Windows.Forms.PictureBox PictureEdit;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
