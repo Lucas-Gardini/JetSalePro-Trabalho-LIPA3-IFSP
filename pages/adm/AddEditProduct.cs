@@ -23,7 +23,6 @@ namespace JetSalePro
 
 			LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
-			TextBoxCod.Enabled = false;
 			TextBoxCod.ReadOnly = true;
 			ComboBoxCond.SelectedIndex = 0;
 		}

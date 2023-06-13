@@ -120,11 +120,11 @@
     <Compile Include="pages\adm\AddEditProduct.Designer.cs">
       <DependentUpon>AddEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\adm\AddEditUser.cs">
+    <Compile Include="pages\adm\AddEditSearchUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\AddEditUser.Designer.cs">
-      <DependentUpon>AddEditUser.cs</DependentUpon>
+    <Compile Include="pages\adm\AddEditSearchUser.Designer.cs">
+      <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\adm\Product.cs">
       <SubType>Form</SubType>
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="pages\adm\AddEditProduct.resx">
       <DependentUpon>AddEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\adm\AddEditUser.resx">
-      <DependentUpon>AddEditUser.cs</DependentUpon>
+    <EmbeddedResource Include="pages\adm\AddEditSearchUser.resx">
+      <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\adm\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
