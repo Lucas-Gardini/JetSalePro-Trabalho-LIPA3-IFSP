@@ -114,11 +114,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
+    <Compile Include="pages\adm\AddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\adm\AddEditProduct.Designer.cs">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\adm\AddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pages\adm\AddEditUser.Designer.cs">
       <DependentUpon>AddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\adm\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\adm\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\adm\UserManagement.cs">
       <SubType>Form</SubType>
@@ -159,9 +171,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\Database.cs" />
+    <Compile Include="services\Products.cs" />
     <Compile Include="services\User.cs" />
+    <EmbeddedResource Include="pages\adm\AddEditProduct.resx">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\adm\AddEditUser.resx">
       <DependentUpon>AddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\adm\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\adm\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>
@@ -232,6 +251,7 @@
     <None Include="assets\images\icons\delete.png" />
     <None Include="assets\images\icons\edit.png" />
     <None Include="assets\images\icons\user.png" />
+    <None Include="assets\images\icons\cart-outline.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

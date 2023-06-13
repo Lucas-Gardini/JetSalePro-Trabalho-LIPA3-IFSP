@@ -53,5 +53,11 @@ namespace JetSalePro {
             if (_loaded)
                 Global.FormResize(this);
         }
-    }
+
+		private void ButtonProdutos_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			new Thread(() => Application.Run(new Product())).Start();
+		}
+	}
 }

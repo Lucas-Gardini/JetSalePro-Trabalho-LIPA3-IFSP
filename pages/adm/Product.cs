@@ -7,16 +7,16 @@ using System.Threading;
 using System.Windows.Forms;
 
 namespace JetSalePro {
-    public partial class UserManagement : KryptonForm {
+    public partial class Product : KryptonForm {
         // Modal de carregamento
         Loading loadingForm;
 
         private bool _loaded = false;
 
-        public UserManagement() {
+        public Product() {
             InitializeComponent();
 
-			DataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			DataGridViewProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 		}
 
         private async void Form_Load(object sender, EventArgs e) {
@@ -38,12 +38,12 @@ namespace JetSalePro {
             loadingForm.Show();
 
             // Obtendo os usuários
-            var data = await User.GetUsers();
+            var data = await Products.GetProducts();
 
-            DataGridViewUsers.Rows.Clear();
+            DataGridViewProducts.Rows.Clear();
             // Loopando pelo resultado e adicionando os itens na row
             foreach (DataRow row in data.Rows) {
-                DataGridViewUsers.Rows.Add(row.ItemArray);
+                DataGridViewProducts.Rows.Add(row.ItemArray);
             }
 
             loadingForm.Close();
@@ -56,7 +56,7 @@ namespace JetSalePro {
         }
 
         private void PictureAdd_Click(object sender, EventArgs e) {
-            new AddEditUser("-1").ShowDialog();
+            new AddEditProduct("-1").ShowDialog();
 
             Form_Load(sender, e);
         }
@@ -71,15 +71,10 @@ namespace JetSalePro {
         }
 
         private async void PictureDelete_Click(object sender, EventArgs e) {
-            var id = DataGridViewUsers.SelectedCells[0].Value.ToString();
-            var username = DataGridViewUsers.SelectedCells[2].Value.ToString();
+            var id = DataGridViewProducts.SelectedCells[0].Value.ToString();
+            var produto = DataGridViewProducts.SelectedCells[1].Value.ToString();
 
-            if (username == Global.CurrentUser) {
-                new Alert("Ação Inválida!", "Você não pode excluir o usuário que está logado.").ShowDialog();
-                return;
-            }
-
-            Alert dialog = new Alert("Excluir usuário", $"Deseja realmente excluir o usuário {username}?", true);
+            Alert dialog = new Alert("Excluir produto", $"Deseja realmente excluir o {produto}?", true);
             DialogResult result = dialog.ShowDialog();
 
             if (result == DialogResult.OK) {
@@ -87,31 +82,30 @@ namespace JetSalePro {
 
                 loadingForm.Show();
 
-                var success = await User.DeleteUser(id);
+                var success = await Products.DeleteProduct(id);
 
                 loadingForm.Close();
 
                 if (success) {
-                    new Success("Sucesso!", "Usuário excluído com sucesso.").ShowDialog();
+                    new Success("Sucesso!", "Produto excluído com sucesso.").ShowDialog();
                     Form_Load(sender, e);
                 } else {
-                    new Alert("Erro!", "Não foi possível excluir o usuário.").ShowDialog();
+                    new Alert("Erro!", "Não foi possível excluir o produto.").ShowDialog();
                 }
 
             }
         }
 
         private void PictureEdit_Click(object sender, EventArgs e) {
-            if (DataGridViewUsers.SelectedCells.Count == 0) {
-                new Alert("Ação Inválida!", "Selecione um usuário para editar.").ShowDialog();
+            if (DataGridViewProducts.SelectedCells.Count == 0) {
+                new Alert("Ação Inválida!", "Selecione um produto para editar.").ShowDialog();
                 return;
             }
 
-            var id = DataGridViewUsers.SelectedCells[0].Value.ToString();
-            new AddEditUser(id).ShowDialog();
+            var id = DataGridViewProducts.SelectedCells[0].Value.ToString();
+            new AddEditProduct(id).ShowDialog();
 
             Form_Load(sender, e);
-
         }
     }
 }

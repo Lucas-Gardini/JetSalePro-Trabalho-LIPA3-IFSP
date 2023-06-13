@@ -5,7 +5,7 @@ USE jet_sale_pro;
 CREATE TABLE IF NOT EXISTS produtos (
     codigo_produto INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     descricao VARCHAR(100) NOT NULL,
-    codigo_barras INT(13) UNIQUE NOT NULL,
+    codigo_barras VARCHAR(13) UNIQUE NOT NULL,
     marca VARCHAR(50) NOT NULL,
     peso FLOAT NOT NULL,
     largura FLOAT NOT NULL,
