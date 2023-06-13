@@ -26,3 +26,6 @@
 - [ ] Pesquisa
 ## Relatórios
 - [ ] Pesquisa
+## Autenticação
+- [x] Logar
+- [ ] Deslogar
