@@ -1,57 +1,72 @@
-﻿namespace JetSalePro {
-    partial class Product {
-        /// <summary>
-        /// Variável de designer necessária.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+﻿namespace JetSalePro
+{
+	partial class Client
+	{
+		/// <summary>
+		/// Variável de designer necessária.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Limpar os recursos que estão sendo usados.
-        /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Limpar os recursos que estão sendo usados.
+		/// </summary>
+		/// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Código gerado pelo Windows Form Designer
+		#region Código gerado pelo Windows Form Designer
 
-        /// <summary>
-        /// Método necessário para suporte ao Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
-        /// </summary>
-        private void InitializeComponent() {
+		/// <summary>
+		/// Método necessário para suporte ao Designer - não modifique 
+		/// o conteúdo deste método com o editor de código.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
 			this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
 			this.LabelCopy = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.DataGridViewProducts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+			this.DataGridViewClients = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
 			this.PictureAdd = new System.Windows.Forms.PictureBox();
 			this.PictureSearch = new System.Windows.Forms.PictureBox();
 			this.PictureDelete = new System.Windows.Forms.PictureBox();
 			this.PictureEdit = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.codigoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.codBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Largura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.altura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.profundidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.situacao = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.condicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.criado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.atualizado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.gen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.civil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.profissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nacionalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.whatsapp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.criado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.atualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.DataGridViewProducts)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.DataGridViewClients)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).BeginInit();
@@ -130,39 +145,49 @@
 			this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(696, 18);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(205, 25);
+			this.label2.Size = new System.Drawing.Size(188, 25);
 			this.label2.TabIndex = 11;
-			this.label2.Text = "Controle de produtos";
+			this.label2.Text = "Controle de clientes";
 			// 
-			// DataGridViewProducts
+			// DataGridViewClients
 			// 
-			this.DataGridViewProducts.AllowUserToAddRows = false;
-			this.DataGridViewProducts.AllowUserToDeleteRows = false;
-			this.DataGridViewProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.DataGridViewClients.AllowUserToAddRows = false;
+			this.DataGridViewClients.AllowUserToDeleteRows = false;
+			this.DataGridViewClients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.DataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DataGridViewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoProduto,
-            this.descricao,
-            this.codBarras,
-            this.marca,
-            this.peso,
-            this.Largura,
-            this.altura,
-            this.profundidade,
-            this.situacao,
-            this.condicao,
-            this.preco,
-            this.quantidade,
-            this.criado_em,
-            this.atualizado_em});
-			this.DataGridViewProducts.Location = new System.Drawing.Point(13, 56);
-			this.DataGridViewProducts.Name = "DataGridViewProducts";
-			this.DataGridViewProducts.ReadOnly = true;
-			this.DataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.DataGridViewProducts.Size = new System.Drawing.Size(823, 366);
-			this.DataGridViewProducts.TabIndex = 12;
+			this.DataGridViewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DataGridViewClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.nome,
+            this.ativo,
+            this.cpf,
+            this.rg,
+            this.gen,
+            this.nascimento,
+            this.civil,
+            this.profissao,
+            this.nacionalidade,
+            this.tel,
+            this.cel,
+            this.whatsapp,
+            this.email,
+            this.rua,
+            this.n,
+            this.complemento,
+            this.bairro,
+            this.cidade,
+            this.UF,
+            this.cep,
+            this.obs,
+            this.criado,
+            this.atualizado});
+			this.DataGridViewClients.Location = new System.Drawing.Point(13, 56);
+			this.DataGridViewClients.Name = "DataGridViewClients";
+			this.DataGridViewClients.ReadOnly = true;
+			this.DataGridViewClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.DataGridViewClients.Size = new System.Drawing.Size(823, 366);
+			this.DataGridViewClients.TabIndex = 12;
 			// 
 			// PictureAdd
 			// 
@@ -224,7 +249,7 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.cart_outline;
+			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.user;
 			this.pictureBox2.Location = new System.Drawing.Point(656, 12);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(40, 38);
@@ -233,93 +258,151 @@
 			this.pictureBox2.TabStop = false;
 			this.pictureBox2.WaitOnLoad = true;
 			// 
-			// codigoProduto
+			// codigo
 			// 
-			this.codigoProduto.HeaderText = "Código";
-			this.codigoProduto.Name = "codigoProduto";
-			this.codigoProduto.ReadOnly = true;
+			this.codigo.HeaderText = "Código";
+			this.codigo.Name = "codigo";
+			this.codigo.ReadOnly = true;
 			// 
-			// descricao
+			// nome
 			// 
-			this.descricao.HeaderText = "Descrição";
-			this.descricao.Name = "descricao";
-			this.descricao.ReadOnly = true;
+			this.nome.HeaderText = "Nome";
+			this.nome.Name = "nome";
+			this.nome.ReadOnly = true;
 			// 
-			// codBarras
+			// ativo
 			// 
-			this.codBarras.HeaderText = "Cod. Barras";
-			this.codBarras.Name = "codBarras";
-			this.codBarras.ReadOnly = true;
+			this.ativo.HeaderText = "Ativo";
+			this.ativo.Name = "ativo";
+			this.ativo.ReadOnly = true;
 			// 
-			// marca
+			// cpf
 			// 
-			this.marca.HeaderText = "Marca";
-			this.marca.Name = "marca";
-			this.marca.ReadOnly = true;
+			this.cpf.HeaderText = "CPF";
+			this.cpf.Name = "cpf";
+			this.cpf.ReadOnly = true;
 			// 
-			// peso
+			// rg
 			// 
-			this.peso.HeaderText = "Peso";
-			this.peso.Name = "peso";
-			this.peso.ReadOnly = true;
+			this.rg.HeaderText = "RG";
+			this.rg.Name = "rg";
+			this.rg.ReadOnly = true;
 			// 
-			// Largura
+			// gen
 			// 
-			this.Largura.HeaderText = "largura";
-			this.Largura.Name = "Largura";
-			this.Largura.ReadOnly = true;
+			this.gen.HeaderText = "Gênero";
+			this.gen.Name = "gen";
+			this.gen.ReadOnly = true;
 			// 
-			// altura
+			// nascimento
 			// 
-			this.altura.HeaderText = "Altura";
-			this.altura.Name = "altura";
-			this.altura.ReadOnly = true;
+			this.nascimento.HeaderText = "Data Nasc.";
+			this.nascimento.Name = "nascimento";
+			this.nascimento.ReadOnly = true;
 			// 
-			// profundidade
+			// civil
 			// 
-			this.profundidade.HeaderText = "Profundidade";
-			this.profundidade.Name = "profundidade";
-			this.profundidade.ReadOnly = true;
+			this.civil.HeaderText = "Estado Civil";
+			this.civil.Name = "civil";
+			this.civil.ReadOnly = true;
 			// 
-			// situacao
+			// profissao
 			// 
-			this.situacao.HeaderText = "Ativo";
-			this.situacao.Name = "situacao";
-			this.situacao.ReadOnly = true;
-			this.situacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.situacao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.profissao.HeaderText = "Profissão";
+			this.profissao.Name = "profissao";
+			this.profissao.ReadOnly = true;
 			// 
-			// condicao
+			// nacionalidade
 			// 
-			this.condicao.HeaderText = "Condição";
-			this.condicao.Name = "condicao";
-			this.condicao.ReadOnly = true;
+			this.nacionalidade.HeaderText = "Nacionalidade";
+			this.nacionalidade.Name = "nacionalidade";
+			this.nacionalidade.ReadOnly = true;
 			// 
-			// preco
+			// tel
 			// 
-			this.preco.HeaderText = "Preço";
-			this.preco.Name = "preco";
-			this.preco.ReadOnly = true;
+			this.tel.HeaderText = "Telefone";
+			this.tel.Name = "tel";
+			this.tel.ReadOnly = true;
 			// 
-			// quantidade
+			// cel
 			// 
-			this.quantidade.HeaderText = "Quantidade";
-			this.quantidade.Name = "quantidade";
-			this.quantidade.ReadOnly = true;
+			this.cel.HeaderText = "Celular";
+			this.cel.Name = "cel";
+			this.cel.ReadOnly = true;
 			// 
-			// criado_em
+			// whatsapp
 			// 
-			this.criado_em.HeaderText = "D. Criado";
-			this.criado_em.Name = "criado_em";
-			this.criado_em.ReadOnly = true;
+			this.whatsapp.HeaderText = "Whatsapp";
+			this.whatsapp.Name = "whatsapp";
+			this.whatsapp.ReadOnly = true;
 			// 
-			// atualizado_em
+			// email
 			// 
-			this.atualizado_em.HeaderText = "D. Atualizado";
-			this.atualizado_em.Name = "atualizado_em";
-			this.atualizado_em.ReadOnly = true;
+			this.email.HeaderText = "Email";
+			this.email.Name = "email";
+			this.email.ReadOnly = true;
 			// 
-			// Product
+			// rua
+			// 
+			this.rua.HeaderText = "Rua";
+			this.rua.Name = "rua";
+			this.rua.ReadOnly = true;
+			// 
+			// n
+			// 
+			this.n.HeaderText = "Nº";
+			this.n.Name = "n";
+			this.n.ReadOnly = true;
+			// 
+			// complemento
+			// 
+			this.complemento.HeaderText = "Complemento";
+			this.complemento.Name = "complemento";
+			this.complemento.ReadOnly = true;
+			// 
+			// bairro
+			// 
+			this.bairro.HeaderText = "Bairro";
+			this.bairro.Name = "bairro";
+			this.bairro.ReadOnly = true;
+			// 
+			// cidade
+			// 
+			this.cidade.HeaderText = "Cidade";
+			this.cidade.Name = "cidade";
+			this.cidade.ReadOnly = true;
+			// 
+			// UF
+			// 
+			this.UF.HeaderText = "UF";
+			this.UF.Name = "UF";
+			this.UF.ReadOnly = true;
+			// 
+			// cep
+			// 
+			this.cep.HeaderText = "CEP";
+			this.cep.Name = "cep";
+			this.cep.ReadOnly = true;
+			// 
+			// obs
+			// 
+			this.obs.HeaderText = "Obs";
+			this.obs.Name = "obs";
+			this.obs.ReadOnly = true;
+			// 
+			// criado
+			// 
+			this.criado.HeaderText = "Criado em";
+			this.criado.Name = "criado";
+			this.criado.ReadOnly = true;
+			// 
+			// atualizado
+			// 
+			this.atualizado.HeaderText = "Atualizado em";
+			this.atualizado.Name = "atualizado";
+			this.atualizado.ReadOnly = true;
+			// 
+			// Client
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,14 +413,14 @@
 			this.Controls.Add(this.PictureDelete);
 			this.Controls.Add(this.PictureSearch);
 			this.Controls.Add(this.PictureAdd);
-			this.Controls.Add(this.DataGridViewProducts);
+			this.Controls.Add(this.DataGridViewClients);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.LabelCopy);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(540, 500);
-			this.Name = "Product";
+			this.Name = "Client";
 			this.Palette = this.AppPalette;
 			this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -345,7 +428,7 @@
 			this.Load += new System.EventHandler(this.Form_Load);
 			this.Resize += new System.EventHandler(this.UserManagement_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.DataGridViewProducts)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.DataGridViewClients)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).EndInit();
@@ -354,35 +437,45 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private ComponentFactory.Krypton.Toolkit.KryptonPalette AppPalette;
-        private System.Windows.Forms.Label LabelCopy;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewProducts;
-        private System.Windows.Forms.PictureBox PictureAdd;
-        private System.Windows.Forms.PictureBox PictureSearch;
-        private System.Windows.Forms.PictureBox PictureDelete;
-        private System.Windows.Forms.PictureBox PictureEdit;
-        private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn codigoProduto;
-		private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-		private System.Windows.Forms.DataGridViewTextBoxColumn codBarras;
-		private System.Windows.Forms.DataGridViewTextBoxColumn marca;
-		private System.Windows.Forms.DataGridViewTextBoxColumn peso;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Largura;
-		private System.Windows.Forms.DataGridViewTextBoxColumn altura;
-		private System.Windows.Forms.DataGridViewTextBoxColumn profundidade;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn situacao;
-		private System.Windows.Forms.DataGridViewTextBoxColumn condicao;
-		private System.Windows.Forms.DataGridViewTextBoxColumn preco;
-		private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
-		private System.Windows.Forms.DataGridViewTextBoxColumn criado_em;
-		private System.Windows.Forms.DataGridViewTextBoxColumn atualizado_em;
+		private ComponentFactory.Krypton.Toolkit.KryptonPalette AppPalette;
+		private System.Windows.Forms.Label LabelCopy;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewClients;
+		private System.Windows.Forms.PictureBox PictureAdd;
+		private System.Windows.Forms.PictureBox PictureSearch;
+		private System.Windows.Forms.PictureBox PictureDelete;
+		private System.Windows.Forms.PictureBox PictureEdit;
+		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rg;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gen;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nascimento;
+		private System.Windows.Forms.DataGridViewTextBoxColumn civil;
+		private System.Windows.Forms.DataGridViewTextBoxColumn profissao;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidade;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tel;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cel;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn whatsapp;
+		private System.Windows.Forms.DataGridViewTextBoxColumn email;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rua;
+		private System.Windows.Forms.DataGridViewTextBoxColumn n;
+		private System.Windows.Forms.DataGridViewTextBoxColumn complemento;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+		private System.Windows.Forms.DataGridViewTextBoxColumn UF;
+		private System.Windows.Forms.DataGridViewTextBoxColumn cep;
+		private System.Windows.Forms.DataGridViewTextBoxColumn obs;
+		private System.Windows.Forms.DataGridViewTextBoxColumn criado;
+		private System.Windows.Forms.DataGridViewTextBoxColumn atualizado;
 	}
 }
 

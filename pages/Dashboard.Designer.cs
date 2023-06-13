@@ -319,6 +319,7 @@
 			this.ButtonClientes.StateTracking.Border.Width = 1;
 			this.ButtonClientes.TabIndex = 12;
 			this.ButtonClientes.Values.Text = "Clientes";
+			this.ButtonClientes.Click += new System.EventHandler(this.ButtonClientes_Click);
 			// 
 			// ButtonLiberacaoUsers
 			// 

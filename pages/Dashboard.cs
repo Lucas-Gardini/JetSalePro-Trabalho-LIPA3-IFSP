@@ -59,5 +59,11 @@ namespace JetSalePro {
 			this.Close();
 			new Thread(() => Application.Run(new Product())).Start();
 		}
+
+		private void ButtonClientes_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			new Thread(() => Application.Run(new Client())).Start();
+		}
 	}
 }
