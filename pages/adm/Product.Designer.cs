@@ -224,7 +224,7 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.cart_outline;
+			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.cart;
 			this.pictureBox2.Location = new System.Drawing.Point(656, 12);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(40, 38);

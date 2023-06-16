@@ -1,5 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using JetSalePro.pages;
+using JetSalePro.Properties;
 using JetSalePro.services;
 using System;
 using System.IO;
@@ -39,7 +40,7 @@ namespace JetSalePro {
             // Verifica se o arquivo já existe
             if (!File.Exists(filePath)) {
                 // Cria o arquivo caso não exista
-                using (File.Create(filePath)) { }
+                File.Create(filePath).Dispose();
             }
 
             // Converte o texto normal para base64
@@ -169,7 +170,7 @@ namespace JetSalePro {
 
         // Função auxiliar que deixa a imagem responsiva
         private void Login_SizeChanged(object sender, System.EventArgs e) {
-            if (this.Size.Width < 921) {
+            if (this.Size.Width < 800) {
                 PictureLogin.Hide();
             } else {
                 PictureLogin.Show();
@@ -181,14 +182,14 @@ namespace JetSalePro {
             CurrentAuthType = CurrentAuthType == AuthType.Login ? AuthType.Register : AuthType.Login;
 
             if (CurrentAuthType == AuthType.Login) {
-                ButtonLogin.Text = "Entrar";
-                ButtonRegister.Text = "Não tem uma conta?";
+                ButtonLogin.Image = Resources.enter;
+                ButtonRegister.Image = Resources.no_account;
 
                 TextBoxUser.Width = 379;
                 TextBoxName.Hide();
             } else {
-                ButtonLogin.Text = "Registrar";
-                ButtonRegister.Text = "Já tem uma conta?";
+                ButtonLogin.Image = Resources.register;
+                ButtonRegister.Image = Resources.with_account;
 
                 TextBoxUser.Width = (379 / 2) - 10;
                 TextBoxName.Show();

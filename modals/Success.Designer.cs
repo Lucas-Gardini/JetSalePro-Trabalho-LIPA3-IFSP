@@ -28,8 +28,9 @@
             this.LabelTile = new System.Windows.Forms.Label();
             this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.LabelMessage = new System.Windows.Forms.Label();
-            this.ButtonLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LoaderGif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoaderGif
@@ -88,65 +89,18 @@
             this.LabelMessage.TabIndex = 2;
             this.LabelMessage.Text = "MESSAGE";
             // 
-            // ButtonLogin
+            // pictureBox1
             // 
-            this.ButtonLogin.Location = new System.Drawing.Point(386, 269);
-            this.ButtonLogin.Name = "ButtonLogin";
-            this.ButtonLogin.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonLogin.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.OverrideDefault.Back.ColorAngle = 45F;
-            this.ButtonLogin.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.OverrideDefault.Border.ColorAngle = 45F;
-            this.ButtonLogin.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonLogin.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonLogin.OverrideDefault.Border.Rounding = 20;
-            this.ButtonLogin.OverrideDefault.Border.Width = 1;
-            this.ButtonLogin.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ButtonLogin.Size = new System.Drawing.Size(97, 43);
-            this.ButtonLogin.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonLogin.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StateCommon.Back.ColorAngle = 45F;
-            this.ButtonLogin.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonLogin.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StateCommon.Border.ColorAngle = 45F;
-            this.ButtonLogin.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonLogin.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonLogin.StateCommon.Border.Rounding = 20;
-            this.ButtonLogin.StateCommon.Border.Width = 1;
-            this.ButtonLogin.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.ButtonLogin.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.ButtonLogin.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonLogin.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StatePressed.Back.ColorAngle = 135F;
-            this.ButtonLogin.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StatePressed.Border.ColorAngle = 135F;
-            this.ButtonLogin.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonLogin.StatePressed.Border.Rounding = 20;
-            this.ButtonLogin.StatePressed.Border.Width = 1;
-            this.ButtonLogin.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonLogin.StateTracking.Back.ColorAngle = 45F;
-            this.ButtonLogin.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonLogin.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonLogin.StateTracking.Border.ColorAngle = 45F;
-            this.ButtonLogin.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonLogin.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonLogin.StateTracking.Border.Rounding = 20;
-            this.ButtonLogin.StateTracking.Border.Width = 1;
-            this.ButtonLogin.TabIndex = 5;
-            this.ButtonLogin.Values.Text = "Fechar";
-            this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::JetSalePro.Properties.Resources.close;
+            this.pictureBox1.Location = new System.Drawing.Point(343, 259);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // Success
             // 
@@ -154,7 +108,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 324);
             this.ControlBox = false;
-            this.Controls.Add(this.ButtonLogin);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LabelMessage);
             this.Controls.Add(this.LabelTile);
             this.Controls.Add(this.LoaderGif);
@@ -174,6 +128,7 @@
             this.StateCommon.Border.Width = 10;
             this.Load += new System.EventHandler(this.Alert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LoaderGif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,6 +139,6 @@
         private System.Windows.Forms.Label LabelTile;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette AppPalette;
         private System.Windows.Forms.Label LabelMessage;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton ButtonLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

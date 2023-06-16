@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using JetSalePro.pages;
 using System;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -31,14 +32,14 @@ namespace JetSalePro {
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
             if (Global.Adm == false) {
-                ButtonClientes.Visible = false;
-                ButtonClientes.Enabled = false;
+                ButtonClients.Visible = false;
+                ButtonClients.Enabled = false;
 
-                ButtonProdutos.Visible = false;
-                ButtonProdutos.Enabled = false;
+                ButtonProducts.Visible = false;
+                ButtonProducts.Enabled = false;
 
-                ButtonLiberacaoUsers.Visible = false;
-                ButtonLiberacaoUsers.Enabled = false;
+                ButtonUsers.Visible = false;
+                ButtonUsers.Enabled = false;
             }
 
             _loaded = true;
@@ -65,5 +66,25 @@ namespace JetSalePro {
 			this.Close();
 			new Thread(() => Application.Run(new Client())).Start();
 		}
-	}
+
+        private void Logout() {
+            Global.CurrentUser = null;
+            Global.Adm = false;
+
+            if (File.Exists(Application.StartupPath + "/secret.txt")) {
+                File.Delete(Application.StartupPath + "/secret.txt");
+            }
+
+            this.Close();
+            new Thread(() => Application.Run(new Auth())).Start();
+        }
+
+        private void PictureLogout_Click(object sender, EventArgs e) {
+            Logout();
+        }
+
+        private void LabelLogout_Click(object sender, EventArgs e) {
+            Logout();
+        }
+    }
 }

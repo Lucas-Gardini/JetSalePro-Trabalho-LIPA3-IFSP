@@ -114,22 +114,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
-    <Compile Include="pages\adm\AddEditSearchClient.cs">
+    <Compile Include="pages\popups\AddEditSearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\AddEditSearchClient.Designer.cs">
+    <Compile Include="pages\popups\AddEditSearchClient.Designer.cs">
       <DependentUpon>AddEditSearchClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\adm\AddEditProduct.cs">
+    <Compile Include="pages\popups\AddEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\AddEditProduct.Designer.cs">
+    <Compile Include="pages\popups\AddEditProduct.Designer.cs">
       <DependentUpon>AddEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\adm\AddEditSearchUser.cs">
+    <Compile Include="pages\popups\AddEditSearchUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\AddEditSearchUser.Designer.cs">
+    <Compile Include="pages\popups\AddEditSearchUser.Designer.cs">
       <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\adm\Client.cs">
@@ -182,17 +182,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Clients.cs" />
     <Compile Include="services\Products.cs" />
     <Compile Include="services\User.cs" />
-    <EmbeddedResource Include="pages\adm\AddEditSearchClient.resx">
+    <EmbeddedResource Include="pages\popups\AddEditSearchClient.resx">
       <DependentUpon>AddEditSearchClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\adm\AddEditProduct.resx">
+    <EmbeddedResource Include="pages\popups\AddEditProduct.resx">
       <DependentUpon>AddEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\adm\AddEditSearchUser.resx">
+    <EmbeddedResource Include="pages\popups\AddEditSearchUser.resx">
       <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\adm\Client.resx">
@@ -221,14 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -256,6 +256,7 @@
     <None Include="assets\images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cart.bmp" />
     <None Include="assets\images\Logo-Square.png" />
     <None Include="assets\images\Logo.ico" />
     <None Include="assets\database.sql">
@@ -271,6 +272,23 @@
     <None Include="assets\images\icons\edit.png" />
     <None Include="assets\images\icons\user.png" />
     <None Include="assets\images\icons\cart-outline.png" />
+    <None Include="assets\images\icons\logout.png" />
+    <None Include="assets\images\icons\cart-white.png" />
+    <None Include="assets\images\icons\cart.png" />
+    <None Include="assets\images\buttons\save.png" />
+    <None Include="assets\images\buttons\search.png" />
+    <None Include="assets\images\buttons\enter.png" />
+    <None Include="assets\images\buttons\no_account.png" />
+    <None Include="assets\images\buttons\with_account.png" />
+    <None Include="assets\images\buttons\register.png" />
+    <None Include="assets\images\buttons\dash\register_sale.png" />
+    <None Include="assets\images\buttons\dash\clients.png" />
+    <None Include="assets\images\buttons\dash\users_control.png" />
+    <None Include="assets\images\buttons\dash\reports.png" />
+    <None Include="assets\images\buttons\dash\products.png" />
+    <None Include="assets\images\icons\edit_pen.png" />
+    <None Include="assets\images\buttons\confirm.png" />
+    <None Include="assets\images\buttons\close.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

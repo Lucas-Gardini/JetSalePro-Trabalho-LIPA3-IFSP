@@ -20,7 +20,7 @@ namespace JetSalePro.pages {
             LabelMessage.Text = Message;
         }
 
-        private void ButtonLogin_Click(object sender, System.EventArgs e) {
+        private void ButtonClose_Click(object sender, System.EventArgs e) {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel; // Set the dialog result
             this.Close();
         }

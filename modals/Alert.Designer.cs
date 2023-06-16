@@ -28,9 +28,11 @@
             this.LabelTile = new System.Windows.Forms.Label();
             this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.LabelMessage = new System.Windows.Forms.Label();
-            this.ButtonCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.ButtonConfirm = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.ButtonConfirm = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LoaderGif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonConfirm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoaderGif
@@ -89,125 +91,31 @@
             this.LabelMessage.TabIndex = 2;
             this.LabelMessage.Text = "MESSAGE";
             // 
-            // ButtonCancel
-            // 
-            this.ButtonCancel.Location = new System.Drawing.Point(367, 269);
-            this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonCancel.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.OverrideDefault.Back.ColorAngle = 45F;
-            this.ButtonCancel.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.OverrideDefault.Border.ColorAngle = 45F;
-            this.ButtonCancel.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonCancel.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonCancel.OverrideDefault.Border.Rounding = 20;
-            this.ButtonCancel.OverrideDefault.Border.Width = 1;
-            this.ButtonCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ButtonCancel.Size = new System.Drawing.Size(116, 43);
-            this.ButtonCancel.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonCancel.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StateCommon.Back.ColorAngle = 45F;
-            this.ButtonCancel.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonCancel.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StateCommon.Border.ColorAngle = 45F;
-            this.ButtonCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonCancel.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonCancel.StateCommon.Border.Rounding = 20;
-            this.ButtonCancel.StateCommon.Border.Width = 1;
-            this.ButtonCancel.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.ButtonCancel.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.ButtonCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCancel.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StatePressed.Back.ColorAngle = 135F;
-            this.ButtonCancel.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StatePressed.Border.ColorAngle = 135F;
-            this.ButtonCancel.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonCancel.StatePressed.Border.Rounding = 20;
-            this.ButtonCancel.StatePressed.Border.Width = 1;
-            this.ButtonCancel.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonCancel.StateTracking.Back.ColorAngle = 45F;
-            this.ButtonCancel.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonCancel.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonCancel.StateTracking.Border.ColorAngle = 45F;
-            this.ButtonCancel.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonCancel.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonCancel.StateTracking.Border.Rounding = 20;
-            this.ButtonCancel.StateTracking.Border.Width = 1;
-            this.ButtonCancel.TabIndex = 5;
-            this.ButtonCancel.Values.Text = "❌  Fechar";
-            this.ButtonCancel.Click += new System.EventHandler(this.ButtonLogin_Click);
-            // 
             // ButtonConfirm
             // 
-            this.ButtonConfirm.Location = new System.Drawing.Point(226, 269);
+            this.ButtonConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonConfirm.Image = global::JetSalePro.Properties.Resources.confirm;
+            this.ButtonConfirm.Location = new System.Drawing.Point(173, 259);
             this.ButtonConfirm.Name = "ButtonConfirm";
-            this.ButtonConfirm.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonConfirm.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.OverrideDefault.Back.ColorAngle = 45F;
-            this.ButtonConfirm.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.OverrideDefault.Border.ColorAngle = 45F;
-            this.ButtonConfirm.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonConfirm.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonConfirm.OverrideDefault.Border.Rounding = 20;
-            this.ButtonConfirm.OverrideDefault.Border.Width = 1;
-            this.ButtonConfirm.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ButtonConfirm.Size = new System.Drawing.Size(135, 43);
-            this.ButtonConfirm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonConfirm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StateCommon.Back.ColorAngle = 45F;
-            this.ButtonConfirm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonConfirm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StateCommon.Border.ColorAngle = 45F;
-            this.ButtonConfirm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonConfirm.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonConfirm.StateCommon.Border.Rounding = 20;
-            this.ButtonConfirm.StateCommon.Border.Width = 1;
-            this.ButtonConfirm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.ButtonConfirm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.ButtonConfirm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonConfirm.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StatePressed.Back.ColorAngle = 135F;
-            this.ButtonConfirm.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StatePressed.Border.ColorAngle = 135F;
-            this.ButtonConfirm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonConfirm.StatePressed.Border.Rounding = 20;
-            this.ButtonConfirm.StatePressed.Border.Width = 1;
-            this.ButtonConfirm.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonConfirm.StateTracking.Back.ColorAngle = 45F;
-            this.ButtonConfirm.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(207)))));
-            this.ButtonConfirm.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(13)))), ((int)(((byte)(255)))));
-            this.ButtonConfirm.StateTracking.Border.ColorAngle = 45F;
-            this.ButtonConfirm.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ButtonConfirm.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.ButtonConfirm.StateTracking.Border.Rounding = 20;
-            this.ButtonConfirm.StateTracking.Border.Width = 1;
-            this.ButtonConfirm.TabIndex = 6;
-            this.ButtonConfirm.Values.Text = "✅  Confirmar";
+            this.ButtonConfirm.Size = new System.Drawing.Size(164, 56);
+            this.ButtonConfirm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ButtonConfirm.TabIndex = 26;
+            this.ButtonConfirm.TabStop = false;
+            this.ButtonConfirm.WaitOnLoad = true;
             this.ButtonConfirm.Click += new System.EventHandler(this.ButtonConfirm_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::JetSalePro.Properties.Resources.close;
+            this.pictureBox1.Location = new System.Drawing.Point(343, 259);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // Alert
             // 
@@ -215,8 +123,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 324);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ButtonConfirm);
-            this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.LabelMessage);
             this.Controls.Add(this.LabelTile);
             this.Controls.Add(this.LoaderGif);
@@ -236,6 +144,8 @@
             this.StateCommon.Border.Width = 10;
             this.Load += new System.EventHandler(this.Alert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LoaderGif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonConfirm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,7 +156,7 @@
         private System.Windows.Forms.Label LabelTile;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette AppPalette;
         private System.Windows.Forms.Label LabelMessage;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton ButtonCancel;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton ButtonConfirm;
+        private System.Windows.Forms.PictureBox ButtonConfirm;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

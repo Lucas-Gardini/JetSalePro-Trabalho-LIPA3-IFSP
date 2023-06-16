@@ -18,7 +18,7 @@ namespace JetSalePro.pages {
             LabelMessage.Text = Message;
         }
 
-        private void ButtonLogin_Click(object sender, System.EventArgs e) {
+        private void ButtonCancel_Click(object sender, System.EventArgs e) {
             this.Close();
         }
     }

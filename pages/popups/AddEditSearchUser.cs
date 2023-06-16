@@ -22,10 +22,13 @@ namespace JetSalePro {
             CurrentUser.CodigoUsuario = int.Parse(userId);
 
             if (isSearch) {
-                ButtonSave.Text = "✅ Buscar";
+                ButtonSave.Image = Resources.search_full;
+                LabelPassword.Hide();
                 TextBoxPassword.Hide();
                 TextBoxCod.Enabled = true;
                 TextBoxCod.ReadOnly = false;
+
+                TextBoxCod.StateCommon.Back.Color1 = Color.LightGray;
             }
 
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
@@ -77,6 +80,11 @@ namespace JetSalePro {
         }
 
         private async void ButtonSave_Click(object sender, EventArgs e) {
+            if (TextBoxUsername.Text == "") {
+                new Alert("Usuário", "O campo usuário é obrigatório!").ShowDialog();
+                return;
+            }
+
             loadingForm.Show();
             loadingForm.Refresh();
 
@@ -117,6 +125,10 @@ namespace JetSalePro {
             } else {
                 new Alert("Usuário", "Erro ao salvar usuário!").ShowDialog();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+
         }
     }
 }
