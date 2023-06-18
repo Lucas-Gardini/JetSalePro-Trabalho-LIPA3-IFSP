@@ -133,6 +133,16 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clients1 {
+            get {
+                object obj = ResourceManager.GetObject("clients1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -350,6 +360,16 @@ namespace JetSalePro.Properties {
         internal static System.Drawing.Bitmap reports {
             get {
                 object obj = ResourceManager.GetObject("reports", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reset_search {
+            get {
+                object obj = ResourceManager.GetObject("reset_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

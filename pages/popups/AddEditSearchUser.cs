@@ -1,7 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using JetSalePro.pages;
 using JetSalePro.Properties;
-using JetSalePro.services;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -12,7 +11,7 @@ namespace JetSalePro {
         // Modal de carregamento
         Loading loadingForm = new Loading();
 
-        public User CurrentUser = new User();
+        public services.User CurrentUser = new services.User();
 
         private bool _isSearch = false;
 
@@ -43,7 +42,7 @@ namespace JetSalePro {
         private async void AddEditUser_Load(object sender, EventArgs e) {
             if (CurrentUser.CodigoUsuario == -1) return;
 
-            var user = await User.GetUsers($"WHERE codigo_usuario = {CurrentUser.CodigoUsuario}");
+            var user = await services.User.GetUsers($"WHERE codigo_usuario = {CurrentUser.CodigoUsuario}");
 
             if (user != null) {
                 TextBoxCod.Text = user.Rows[0]["codigo_usuario"].ToString();
@@ -80,11 +79,6 @@ namespace JetSalePro {
         }
 
         private async void ButtonSave_Click(object sender, EventArgs e) {
-            if (TextBoxUsername.Text == "") {
-                new Alert("Usuário", "O campo usuário é obrigatório!").ShowDialog();
-                return;
-            }
-
             loadingForm.Show();
             loadingForm.Refresh();
 
@@ -111,9 +105,9 @@ namespace JetSalePro {
 
             bool sucesso;
             if (CurrentUser.CodigoUsuario == -1) {
-                sucesso = await User.CreateUser(CurrentUser);
+                sucesso = await services.User.CreateUser(CurrentUser);
             } else {
-                sucesso = await User.UpdateUser(CurrentUser, CurrentUser.Senha != null);
+                sucesso = await services.User.UpdateUser(CurrentUser, CurrentUser.Senha != null);
             }
 
             loadingForm.Close();

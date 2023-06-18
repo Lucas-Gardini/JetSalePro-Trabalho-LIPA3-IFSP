@@ -1,5 +1,5 @@
 ﻿namespace JetSalePro {
-    partial class UserManagement {
+    partial class User {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagement));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User));
             this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.LabelCopy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,6 +44,7 @@
             this.PictureDelete = new System.Windows.Forms.PictureBox();
             this.PictureEdit = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PictureReset = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).BeginInit();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureReset)).BeginInit();
             this.SuspendLayout();
             // 
             // AppPalette
@@ -276,12 +278,27 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.WaitOnLoad = true;
             // 
-            // UserManagement
+            // PictureReset
+            // 
+            this.PictureReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureReset.Image = global::JetSalePro.Properties.Resources.reset_search;
+            this.PictureReset.Location = new System.Drawing.Point(854, 56);
+            this.PictureReset.Name = "PictureReset";
+            this.PictureReset.Size = new System.Drawing.Size(40, 38);
+            this.PictureReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureReset.TabIndex = 18;
+            this.PictureReset.TabStop = false;
+            this.PictureReset.WaitOnLoad = true;
+            this.PictureReset.Click += new System.EventHandler(this.PictureReset_Click);
+            // 
+            // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(905, 461);
+            this.Controls.Add(this.PictureReset);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PictureEdit);
             this.Controls.Add(this.PictureDelete);
@@ -294,7 +311,7 @@
             this.Controls.Add(this.LabelCopy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(540, 500);
-            this.Name = "UserManagement";
+            this.Name = "User";
             this.Palette = this.AppPalette;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -308,6 +325,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureReset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,6 +352,7 @@
         private System.Windows.Forms.PictureBox PictureDelete;
         private System.Windows.Forms.PictureBox PictureEdit;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox PictureReset;
     }
 }
 

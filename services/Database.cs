@@ -19,10 +19,27 @@ namespace JetSalePro.services {
                 // Gerando o comando SQL e executando-o
                 MySqlCommand command = new MySqlCommand(script, connection);
                 await command.ExecuteNonQueryAsync();
-
-                return true;
             } catch (Exception ex) {
                 new Alert("Erro ao iniciar o banco de dados", ex.Message).ShowDialog();
+                Application.Exit();
+            } finally { connection?.Close(); }
+
+            return true;
+        }
+
+        public static async Task<bool> InsertDefaultData() {
+            // Função auxiliar que retorna uma conexão com o banco de dados
+            MySqlConnection connection = await GetConnectionAsync(false);
+
+            try {
+                // Inserindo os dados padrões
+                string script = File.ReadAllText(Application.StartupPath + "/assets" + "/default_data.sql");
+
+                // Gerando o comando SQL e executando-o
+                MySqlCommand command = new MySqlCommand(script, connection);
+                await command.ExecuteNonQueryAsync();
+            } catch (Exception ex) {
+                new Alert("Erro ao inserir os dados padrão no banco de dados", ex.Message).ShowDialog();
                 Application.Exit();
             } finally { connection?.Close(); }
 

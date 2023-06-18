@@ -120,11 +120,11 @@
     <Compile Include="pages\popups\AddEditSearchClient.Designer.cs">
       <DependentUpon>AddEditSearchClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\popups\AddEditProduct.cs">
+    <Compile Include="pages\popups\AddEditSearchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\popups\AddEditProduct.Designer.cs">
-      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    <Compile Include="pages\popups\AddEditSearchProduct.Designer.cs">
+      <DependentUpon>AddEditSearchProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\popups\AddEditSearchUser.cs">
       <SubType>Form</SubType>
@@ -144,11 +144,11 @@
     <Compile Include="pages\adm\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\adm\UserManagement.cs">
+    <Compile Include="pages\adm\User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\UserManagement.Designer.cs">
-      <DependentUpon>UserManagement.cs</DependentUpon>
+    <Compile Include="pages\adm\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\Dashboard.cs">
       <SubType>Form</SubType>
@@ -194,8 +194,8 @@
     <EmbeddedResource Include="pages\popups\AddEditSearchClient.resx">
       <DependentUpon>AddEditSearchClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\popups\AddEditProduct.resx">
-      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    <EmbeddedResource Include="pages\popups\AddEditSearchProduct.resx">
+      <DependentUpon>AddEditSearchProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\popups\AddEditSearchUser.resx">
       <DependentUpon>AddEditSearchUser.cs</DependentUpon>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="pages\adm\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\adm\UserManagement.resx">
-      <DependentUpon>UserManagement.cs</DependentUpon>
+    <EmbeddedResource Include="pages\adm\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -289,6 +289,11 @@
     <None Include="assets\images\icons\edit_pen.png" />
     <None Include="assets\images\buttons\confirm.png" />
     <None Include="assets\images\buttons\close.png" />
+    <None Include="assets\images\icons\reset_search.png" />
+    <None Include="assets\default_data.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\images\icons\clients.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

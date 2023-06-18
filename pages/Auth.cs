@@ -84,8 +84,30 @@ namespace JetSalePro {
 
             loadingForm.ShowSplashScreen();
 
-            // Criando o banco (caso não exista)
             await Database.CreateDatabase();
+
+            try {
+                // Verificando se a pergunta já foi feita
+                var asked = ReadFileBase64(Application.StartupPath + "/insertedDefault.txt");
+
+                if (asked == null) {
+                    var insertDefaultData = new Alert("Inserir dados de teste", "Deseja inserir os dados de teste no banco de dados?", true).ShowDialog();
+                    if (insertDefaultData == DialogResult.Yes) {
+                        await Database.InsertDefaultData();
+                    }
+
+                    WriteBase64ToFile(Application.StartupPath + "/insertedDefault.txt", "TRUE");
+                }
+            } catch {
+                // O arquivo não existe
+
+                var insertDefaultData = new Alert("Inserir dados de teste", "Deseja inserir os dados de teste no banco de dados?", true).ShowDialog();
+                if (insertDefaultData == DialogResult.OK) {
+                    await Database.InsertDefaultData();
+                }
+
+                WriteBase64ToFile(Application.StartupPath + "/insertedDefault.txt", "TRUE");
+            }
 
             // Verificando se o usuário mandou lembrar dele
             try {
@@ -225,7 +247,7 @@ namespace JetSalePro {
             // Execução da autenticação
             switch (CurrentAuthType) {
                 case AuthType.Login:
-                    UserStatus validUser = await User.Authenticate(user, password);
+                    UserStatus validUser = await services.User.Authenticate(user, password);
 
                     // Fechamento da tela de carregamento
                     loadingForm.CloseForm();
@@ -251,7 +273,7 @@ namespace JetSalePro {
                     break;
 
                 case AuthType.Register:
-                    bool createdUser = await User.CreateUser(new User() {
+                    bool createdUser = await services.User.CreateUser(new services.User() {
                         Nome = name,
                         Usuario = user,
                         Senha = password,

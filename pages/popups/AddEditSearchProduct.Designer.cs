@@ -1,6 +1,6 @@
 ﻿namespace JetSalePro
 {
-	partial class AddEditProduct
+	partial class AddEditSearchProduct
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditSearchProduct));
             this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.LabelCopy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,12 +60,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ButtonSave = new System.Windows.Forms.PictureBox();
-            this.kryptonComboBox1 = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AppPalette
@@ -100,10 +98,9 @@
             this.LabelCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelCopy.AutoSize = true;
             this.LabelCopy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCopy.Location = new System.Drawing.Point(1052, 542);
-            this.LabelCopy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelCopy.Location = new System.Drawing.Point(623, 340);
             this.LabelCopy.Name = "LabelCopy";
-            this.LabelCopy.Size = new System.Drawing.Size(134, 20);
+            this.LabelCopy.Size = new System.Drawing.Size(104, 15);
             this.LabelCopy.TabIndex = 8;
             this.LabelCopy.Text = "© 0000 JetSale Pro";
             // 
@@ -111,10 +108,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::JetSalePro.Properties.Resources.back1;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -126,10 +122,9 @@
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(54, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 32);
+            this.label1.Size = new System.Drawing.Size(66, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Voltar";
             this.label1.Click += new System.EventHandler(this.GoBack);
@@ -140,20 +135,18 @@
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(860, 22);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(479, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(329, 32);
+            this.label2.Size = new System.Drawing.Size(256, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Adicionar / Editar produtos";
             // 
             // TextBoxCod
             // 
-            this.TextBoxCod.Location = new System.Drawing.Point(16, 126);
-            this.TextBoxCod.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxCod.Location = new System.Drawing.Point(12, 102);
             this.TextBoxCod.Name = "TextBoxCod";
             this.TextBoxCod.ReadOnly = true;
-            this.TextBoxCod.Size = new System.Drawing.Size(160, 39);
+            this.TextBoxCod.Size = new System.Drawing.Size(120, 34);
             this.TextBoxCod.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
             this.TextBoxCod.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxCod.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -172,10 +165,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 28);
+            this.label3.Size = new System.Drawing.Size(41, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "Cód.";
             // 
@@ -183,19 +175,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(184, 96);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(138, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 28);
+            this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 16;
             this.label4.Text = "Descrição";
             // 
             // TextBoxDesc
             // 
-            this.TextBoxDesc.Location = new System.Drawing.Point(184, 126);
-            this.TextBoxDesc.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxDesc.Location = new System.Drawing.Point(138, 102);
             this.TextBoxDesc.Name = "TextBoxDesc";
-            this.TextBoxDesc.Size = new System.Drawing.Size(275, 39);
+            this.TextBoxDesc.Size = new System.Drawing.Size(206, 34);
             this.TextBoxDesc.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxDesc.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxDesc.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -214,19 +204,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(467, 96);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(350, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 28);
+            this.label5.Size = new System.Drawing.Size(89, 21);
             this.label5.TabIndex = 18;
             this.label5.Text = "Cod. Barras";
             // 
             // TextBoxCodBarras
             // 
-            this.TextBoxCodBarras.Location = new System.Drawing.Point(467, 126);
-            this.TextBoxCodBarras.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxCodBarras.Location = new System.Drawing.Point(350, 102);
             this.TextBoxCodBarras.Name = "TextBoxCodBarras";
-            this.TextBoxCodBarras.Size = new System.Drawing.Size(251, 39);
+            this.TextBoxCodBarras.Size = new System.Drawing.Size(188, 34);
             this.TextBoxCodBarras.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxCodBarras.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxCodBarras.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -243,11 +231,12 @@
             // 
             // CheckBoxAtivo
             // 
-            this.CheckBoxAtivo.Location = new System.Drawing.Point(387, 320);
-            this.CheckBoxAtivo.Margin = new System.Windows.Forms.Padding(4);
+            this.CheckBoxAtivo.Checked = true;
+            this.CheckBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBoxAtivo.Location = new System.Drawing.Point(290, 260);
             this.CheckBoxAtivo.Name = "CheckBoxAtivo";
             this.CheckBoxAtivo.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.CheckBoxAtivo.Size = new System.Drawing.Size(70, 26);
+            this.CheckBoxAtivo.Size = new System.Drawing.Size(57, 22);
             this.CheckBoxAtivo.TabIndex = 21;
             this.CheckBoxAtivo.Values.Text = "Ativo?";
             // 
@@ -255,19 +244,17 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(725, 96);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(544, 78);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 28);
+            this.label7.Size = new System.Drawing.Size(53, 21);
             this.label7.TabIndex = 25;
             this.label7.Text = "Marca";
             // 
             // TextBoxMarca
             // 
-            this.TextBoxMarca.Location = new System.Drawing.Point(725, 126);
-            this.TextBoxMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxMarca.Location = new System.Drawing.Point(544, 102);
             this.TextBoxMarca.Name = "TextBoxMarca";
-            this.TextBoxMarca.Size = new System.Drawing.Size(251, 39);
+            this.TextBoxMarca.Size = new System.Drawing.Size(188, 34);
             this.TextBoxMarca.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxMarca.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxMarca.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -286,19 +273,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 188);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(12, 153);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 28);
+            this.label8.Size = new System.Drawing.Size(61, 21);
             this.label8.TabIndex = 27;
             this.label8.Text = "Peso(g)";
             // 
             // TextBoxPeso
             // 
-            this.TextBoxPeso.Location = new System.Drawing.Point(16, 218);
-            this.TextBoxPeso.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxPeso.Location = new System.Drawing.Point(12, 177);
             this.TextBoxPeso.Name = "TextBoxPeso";
-            this.TextBoxPeso.Size = new System.Drawing.Size(160, 39);
+            this.TextBoxPeso.Size = new System.Drawing.Size(120, 34);
             this.TextBoxPeso.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxPeso.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxPeso.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -317,19 +302,17 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(189, 188);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(142, 153);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 28);
+            this.label9.Size = new System.Drawing.Size(95, 21);
             this.label9.TabIndex = 29;
             this.label9.Text = "Largura(cm)";
             // 
             // TextBoxLargura
             // 
-            this.TextBoxLargura.Location = new System.Drawing.Point(189, 218);
-            this.TextBoxLargura.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxLargura.Location = new System.Drawing.Point(142, 177);
             this.TextBoxLargura.Name = "TextBoxLargura";
-            this.TextBoxLargura.Size = new System.Drawing.Size(160, 39);
+            this.TextBoxLargura.Size = new System.Drawing.Size(120, 34);
             this.TextBoxLargura.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxLargura.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxLargura.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -348,19 +331,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(359, 188);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(269, 153);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 28);
+            this.label10.Size = new System.Drawing.Size(83, 21);
             this.label10.TabIndex = 31;
             this.label10.Text = "Altura(cm)";
             // 
             // TextBoxAltura
             // 
-            this.TextBoxAltura.Location = new System.Drawing.Point(359, 218);
-            this.TextBoxAltura.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxAltura.Location = new System.Drawing.Point(269, 177);
             this.TextBoxAltura.Name = "TextBoxAltura";
-            this.TextBoxAltura.Size = new System.Drawing.Size(160, 39);
+            this.TextBoxAltura.Size = new System.Drawing.Size(120, 34);
             this.TextBoxAltura.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxAltura.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxAltura.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -379,19 +360,17 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(528, 188);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(396, 153);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(169, 28);
+            this.label11.Size = new System.Drawing.Size(135, 21);
             this.label11.TabIndex = 33;
             this.label11.Text = "Profundidade(cm)";
             // 
             // TextBoxProfun
             // 
-            this.TextBoxProfun.Location = new System.Drawing.Point(528, 218);
-            this.TextBoxProfun.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxProfun.Location = new System.Drawing.Point(396, 177);
             this.TextBoxProfun.Name = "TextBoxProfun";
-            this.TextBoxProfun.Size = new System.Drawing.Size(221, 39);
+            this.TextBoxProfun.Size = new System.Drawing.Size(166, 34);
             this.TextBoxProfun.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxProfun.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxProfun.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -410,19 +389,17 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(757, 188);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(568, 153);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 28);
+            this.label12.Size = new System.Drawing.Size(49, 21);
             this.label12.TabIndex = 35;
             this.label12.Text = "Preço";
             // 
             // TextBoxPreco
             // 
-            this.TextBoxPreco.Location = new System.Drawing.Point(757, 218);
-            this.TextBoxPreco.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxPreco.Location = new System.Drawing.Point(568, 177);
             this.TextBoxPreco.Name = "TextBoxPreco";
-            this.TextBoxPreco.Size = new System.Drawing.Size(219, 39);
+            this.TextBoxPreco.Size = new System.Drawing.Size(164, 34);
             this.TextBoxPreco.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxPreco.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxPreco.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -441,19 +418,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 284);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 231);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 28);
+            this.label6.Size = new System.Drawing.Size(91, 21);
             this.label6.TabIndex = 37;
             this.label6.Text = "Quantidade";
             // 
             // TextBoxQuant
             // 
-            this.TextBoxQuant.Location = new System.Drawing.Point(16, 314);
-            this.TextBoxQuant.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxQuant.Location = new System.Drawing.Point(12, 255);
             this.TextBoxQuant.Name = "TextBoxQuant";
-            this.TextBoxQuant.Size = new System.Drawing.Size(160, 39);
+            this.TextBoxQuant.Size = new System.Drawing.Size(120, 34);
             this.TextBoxQuant.StateCommon.Back.Color1 = System.Drawing.Color.LightGray;
             this.TextBoxQuant.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TextBoxQuant.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -472,13 +447,21 @@
             // 
             this.ComboBoxCond.DropDownWidth = 116;
             this.ComboBoxCond.Items.AddRange(new object[] {
+            "",
             "Novo",
             "Usado"});
-            this.ComboBoxCond.Location = new System.Drawing.Point(195, 321);
-            this.ComboBoxCond.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboBoxCond.Location = new System.Drawing.Point(144, 256);
             this.ComboBoxCond.Name = "ComboBoxCond";
-            this.ComboBoxCond.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.ComboBoxCond.Size = new System.Drawing.Size(155, 25);
+            this.ComboBoxCond.Palette = this.AppPalette;
+            this.ComboBoxCond.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.ComboBoxCond.Size = new System.Drawing.Size(116, 33);
+            this.ComboBoxCond.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.LightGray;
+            this.ComboBoxCond.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ComboBoxCond.StateCommon.ComboBox.Border.Rounding = 20;
+            this.ComboBoxCond.StateCommon.ComboBox.Border.Width = 1;
+            this.ComboBoxCond.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.Black;
             this.ComboBoxCond.TabIndex = 38;
             this.ComboBoxCond.UseMnemonic = false;
             // 
@@ -486,10 +469,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(189, 286);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(142, 232);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 28);
+            this.label13.Size = new System.Drawing.Size(75, 21);
             this.label13.TabIndex = 39;
             this.label13.Text = "Condição";
             // 
@@ -498,10 +480,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::JetSalePro.Properties.Resources.edit_pen;
-            this.pictureBox2.Location = new System.Drawing.Point(825, 24);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(453, 20);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.Size = new System.Drawing.Size(24, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 40;
             this.pictureBox2.TabStop = false;
@@ -509,34 +490,25 @@
             // 
             // ButtonSave
             // 
+            this.ButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ButtonSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSave.Image = global::JetSalePro.Properties.Resources.save;
-            this.ButtonSave.Location = new System.Drawing.Point(489, 284);
+            this.ButtonSave.Location = new System.Drawing.Point(612, 260);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(164, 88);
+            this.ButtonSave.Size = new System.Drawing.Size(123, 72);
             this.ButtonSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ButtonSave.TabIndex = 41;
             this.ButtonSave.TabStop = false;
             this.ButtonSave.WaitOnLoad = true;
             this.ButtonSave.Click += new System.EventHandler(this.ButtonSalvar_Click);
             // 
-            // kryptonComboBox1
+            // AddEditSearchProduct
             // 
-            this.kryptonComboBox1.DropDownWidth = 121;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(194, 411);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonComboBox1.Size = new System.Drawing.Size(181, 25);
-            this.kryptonComboBox1.TabIndex = 0;
-            this.kryptonComboBox1.Text = "kryptonComboBox1";
-            // 
-            // AddEditProduct
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1207, 567);
-            this.Controls.Add(this.kryptonComboBox1);
+            this.ClientSize = new System.Drawing.Size(739, 361);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label13);
@@ -567,11 +539,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LabelCopy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(714, 605);
-            this.Name = "AddEditProduct";
-            this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
+            this.MinimumSize = new System.Drawing.Size(755, 400);
+            this.Name = "AddEditSearchProduct";
+            this.Palette = this.AppPalette;
+            this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JetSale Pro";
             this.Load += new System.EventHandler(this.AddEditUser_Load);
@@ -579,7 +551,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ComboBoxCond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,7 +588,6 @@
 		private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox ButtonSave;
-        private ComponentFactory.Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
     }
 }
 

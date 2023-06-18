@@ -47,7 +47,7 @@ namespace JetSalePro {
 
         private void ButtonLiberacaoUsers_Click(object sender, EventArgs e) {
             this.Close();
-            new Thread(() => Application.Run(new UserManagement())).Start();
+            new Thread(() => Application.Run(new User())).Start();
         }
 
         private void Dashboard_Resize(object sender, EventArgs e) {
