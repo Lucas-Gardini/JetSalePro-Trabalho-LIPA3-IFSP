@@ -30,7 +30,7 @@ namespace JetSalePro.services {
 
         #region Funções relacionadas a Model
         public static async Task<bool> UpdateProduct(Products product) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             string updateQuery = $"UPDATE produtos SET descricao = '{product.Descricao}', codigo_barras = '{product.CodigoBarras}', marca = '{product.Marca}', peso = {product.Peso.ToString().Replace(',', '.')}, largura = {product.Largura.ToString().Replace(',', '.')}, altura = {product.Altura.ToString().Replace(',', '.')}, profundidade = {product.Profundidade.ToString().Replace(',', '.')}, situacao = {(product.Situacao ? 1 : 0)}, condicao = '{product.Condicao}', preco_venda = {product.PrecoVenda.ToString().Replace(',', '.')}, quantidade_estoque = {product.Quantidade} ";
 
@@ -50,7 +50,7 @@ namespace JetSalePro.services {
         }
 
         public static async Task<bool> CreateProduct(Products newProduct) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             MySqlCommand command = new MySqlCommand($"INSERT INTO produtos (descricao, codigo_barras, marca, peso, largura, altura, profundidade, situacao, condicao, preco_venda, quantidade_estoque) VALUES ('{newProduct.Descricao}', '{newProduct.CodigoBarras}', '{newProduct.Marca}', '{newProduct.Peso.ToString().Replace(',', '.')}', '{newProduct.Largura.ToString().Replace(',', '.')}', '{newProduct.Altura.ToString().Replace(',', '.')}', '{newProduct.Profundidade.ToString().Replace(',', '.')}', {(newProduct.Situacao ? 1 : 0)}, '{newProduct.Condicao}', '{newProduct.PrecoVenda.ToString().Replace(',', '.')}', '{newProduct.Quantidade}')", connection);
 
@@ -66,7 +66,7 @@ namespace JetSalePro.services {
         }
 
         public static async Task<DataTable> GetProducts(string WHERE = null) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             if (WHERE != null) {
                 WHERE = WHERE.Replace(",", ".");
@@ -94,7 +94,7 @@ namespace JetSalePro.services {
         }
 
         public static async Task<bool> DeleteProduct(string id) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             MySqlCommand command = new MySqlCommand($"DELETE FROM produtos WHERE codigo_produto = {id}", connection);
 

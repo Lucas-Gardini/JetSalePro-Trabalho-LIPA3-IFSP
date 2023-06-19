@@ -132,10 +132,10 @@
     <Compile Include="pages\popups\AddEditSearchUser.Designer.cs">
       <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\adm\Client.cs">
+    <Compile Include="pages\Client.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\adm\Client.Designer.cs">
+    <Compile Include="pages\Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\adm\Product.cs">
@@ -200,7 +200,7 @@
     <EmbeddedResource Include="pages\popups\AddEditSearchUser.resx">
       <DependentUpon>AddEditSearchUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\adm\Client.resx">
+    <EmbeddedResource Include="pages\Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\adm\Product.resx">
@@ -294,6 +294,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="assets\images\icons\clients.png" />
+    <None Include="assets\images\Logo_Round.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -46,7 +46,7 @@ namespace JetSalePro.services
 
 		public static async Task<UserStatus> Authenticate(string username, string password)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			password = CryptToSha256(password);
 
@@ -70,7 +70,7 @@ namespace JetSalePro.services
 
 		public static async Task<bool> IsAdministrator(string username)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			MySqlCommand command = new MySqlCommand($"SELECT adm FROM usuarios WHERE usuario = '{username}'", connection);
 
@@ -93,13 +93,32 @@ namespace JetSalePro.services
 			}
 			return false;
 		}
-		#endregion
 
-		#region Funções relacionadas a Model
+        public static async Task<string> GetUsername(string user) {
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
-		public static async Task<bool> CreateUser(User newUser)
+            MySqlCommand command = new MySqlCommand($"SELECT nome FROM usuarios WHERE usuario = '{user}'", connection);
+
+            try {
+                object result = await command.ExecuteScalarAsync();
+                if (result != null && result != DBNull.Value) {
+                    string username = result.ToString();
+                    return username;
+                }
+            } catch (Exception ex) {
+                new Alert("Usuário", ex.Message).ShowDialog();
+            } finally {
+                connection.Close();
+            }
+            return null;
+        }
+        #endregion
+
+        #region Funções relacionadas a Model
+
+        public static async Task<bool> CreateUser(User newUser)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			MySqlCommand command = new MySqlCommand($"INSERT INTO usuarios (nome, usuario, senha, situacao, adm) VALUES ('{newUser.Nome}', '{newUser.Usuario}', '{CryptToSha256(newUser.Senha)}', {(newUser.Situacao ? 1 : 0)}, {newUser.Adm})", connection);
 
@@ -121,7 +140,7 @@ namespace JetSalePro.services
 
 		public static async Task<bool> UpdateUser(User user, bool updatePassword)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			string updateQuery = $"UPDATE usuarios SET nome = '{user.Nome}', usuario = '{user.Usuario}', situacao = {(user.Situacao ? 1 : 0)}, adm = {(user.Adm)}";
 
@@ -152,7 +171,7 @@ namespace JetSalePro.services
 
 		public static async Task<bool> DeleteUser(string id)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			MySqlCommand command = new MySqlCommand($"DELETE FROM usuarios WHERE codigo_usuario = {id}", connection);
 
@@ -175,7 +194,7 @@ namespace JetSalePro.services
 
 		public static async Task<DataTable> GetUsers(string WHERE = null)
 		{
-			MySqlConnection connection = await Database.GetConnectionAsync();
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			MySqlCommand command = new MySqlCommand($"SELECT * FROM usuarios {WHERE}", connection);
 

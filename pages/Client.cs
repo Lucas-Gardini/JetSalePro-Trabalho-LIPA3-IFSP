@@ -27,10 +27,10 @@ namespace JetSalePro {
 
             loadingForm = new Loading();
 
-            if (!Global.Adm) {
-                GoBack(sender, EventArgs.Empty);
-                return;
-            }
+            //if (!Global.Adm) {
+            //    GoBack(sender, EventArgs.Empty);
+            //    return;
+            //}
 
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 

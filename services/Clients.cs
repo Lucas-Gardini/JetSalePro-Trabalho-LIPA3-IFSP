@@ -56,7 +56,7 @@ namespace JetSalePro.services {
 
         #region Funções relacionadas a Model
         public static async Task<DataTable> GetClients(string WHERE = null) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             MySqlCommand command = new MySqlCommand($"SELECT * FROM clientes {WHERE}", connection);
 
@@ -80,7 +80,7 @@ namespace JetSalePro.services {
         }
 
         public static async Task<bool> DeleteClient(string id) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             MySqlCommand command = new MySqlCommand($"DELETE FROM clientes WHERE codigo_cliente = {id}", connection);
 
@@ -96,7 +96,7 @@ namespace JetSalePro.services {
         }
 
         static public async Task<bool> CreateClient(Clients client) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             MySqlCommand command = new MySqlCommand($"INSERT INTO clientes (nome, situacao, cpf, rg, genero, data_nascimento, estado_civil, profissao, nacionalidade, telefone, celular, whatsapp, email, observacoes, rua, numero, complemento, bairro, cidade, uf, cep) " +
                 $"VALUES ('{client.Nome}', '{(client.Situacao ? 1 : 0)}', '{client.CPF}', '{client.RG}', '{client.Genero}', '{client.DataNasc}', '{client.EstadoCivil}', '{client.Profissao}', '{client.Nacionalidade}', '{client.Telefone}', '{client.Celular}', '{(client.Whatsapp ? 1 : 0)}', '{client.Email}', '{client.Obs}', " +
@@ -114,7 +114,7 @@ namespace JetSalePro.services {
         }
 
         static public async Task<bool> UpdateClient(Clients client) {
-            MySqlConnection connection = await Database.GetConnectionAsync();
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
 
             string updateQuery = $"UPDATE clientes SET nome = '{client.Nome}', situacao = '{(client.Situacao ? 1 : 0)}', cpf = '{client.CPF}', rg = '{client.RG}', genero = '{client.Genero}', data_nascimento = '{client.DataNasc}', estado_civil = '{client.EstadoCivil}', profissao = '{client.Profissao}', nacionalidade = '{client.Nacionalidade}', telefone = '{client.Telefone}', celular = '{client.Celular}', whatsapp = '{(client.Whatsapp ? 1 : 0)}', email = '{client.Email}', observacoes = '{client.Obs}', rua = '{client.Rua}', numero = '{client.Numero}', complemento = '{client.Complemento}', bairro = '{client.Bairro}', cidade = '{client.Cidade}', uf = '{client.Uf}', cep = '{client.CEP}'";
             updateQuery += $" WHERE codigo_cliente = {client.CodigoClient}";

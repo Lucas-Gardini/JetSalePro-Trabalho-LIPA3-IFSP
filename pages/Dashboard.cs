@@ -15,7 +15,17 @@ namespace JetSalePro {
             InitializeComponent();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e) {
+        private async void Dashboard_Load(object sender, EventArgs e) {
+            var loadingForm = new Loading();
+            loadingForm.Show();
+
+            LabelLogout.Hide();
+            LabelSell.Hide();
+            LabelReports.Hide();
+            LabelProducts.Hide();
+            LabelAccessCrontrol.Hide();
+            LabelClients.Hide();
+
             if (Global.FormSize.Width != 0) {
                 this.Size = Global.FormSize;
             }
@@ -24,16 +34,18 @@ namespace JetSalePro {
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            this.Activate();
+            this.Hide();
 
             Global.FormResize(this);
 
-            LabelUser.Text = LabelUser.Text.Replace("USUARIO", Global.CurrentUser);
+            var username = await services.User.GetUsername(Global.CurrentUser);
+
+            LabelUser.Text = LabelUser.Text.Replace("USUARIO", username);
             LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
             if (Global.Adm == false) {
-                ButtonClients.Visible = false;
-                ButtonClients.Enabled = false;
+                //ButtonClients.Visible = false;
+                //ButtonClients.Enabled = false;
 
                 ButtonProducts.Visible = false;
                 ButtonProducts.Enabled = false;
@@ -43,6 +55,11 @@ namespace JetSalePro {
             }
 
             _loaded = true;
+
+            loadingForm.Close();
+
+            this.Show();
+            this.Activate();
         }
 
         private void ButtonLiberacaoUsers_Click(object sender, EventArgs e) {
@@ -85,6 +102,54 @@ namespace JetSalePro {
 
         private void LabelLogout_Click(object sender, EventArgs e) {
             Logout();
+        }
+
+        private void PictureLogout_MouseEnter(object sender, EventArgs e) {
+            LabelLogout.Show();
+        }
+
+        private void PictureLogout_MouseLeave(object sender, EventArgs e) {
+            LabelLogout.Hide();
+        }
+
+        private void ButtonSales_MouseEnter(object sender, EventArgs e) {
+            LabelSell.Show();
+        }
+
+        private void ButtonSales_MouseLeave(object sender, EventArgs e) {
+            LabelSell.Hide();
+        }
+
+        private void ButtonReports_MouseEnter(object sender, EventArgs e) {
+            LabelReports.Show();
+        }
+
+        private void ButtonReports_MouseLeave(object sender, EventArgs e) {
+            LabelReports.Hide();
+        }
+
+        private void ButtonProducts_MouseEnter(object sender, EventArgs e) {
+            LabelProducts.Show();
+        }
+
+        private void ButtonProducts_MouseLeave(object sender, EventArgs e) {
+            LabelProducts.Hide();
+        }
+
+        private void ButtonUsers_MouseEnter(object sender, EventArgs e) {
+            LabelAccessCrontrol.Show();
+        }
+
+        private void ButtonUsers_MouseLeave(object sender, EventArgs e) {
+            LabelAccessCrontrol.Hide();
+        }
+
+        private void ButtonClients_MouseEnter(object sender, EventArgs e) {
+            LabelClients.Show();
+        }
+
+        private void ButtonClients_MouseLeave(object sender, EventArgs e) {
+            LabelClients.Hide();
         }
     }
 }

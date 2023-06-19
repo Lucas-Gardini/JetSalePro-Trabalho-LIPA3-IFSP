@@ -5,6 +5,7 @@ namespace JetSalePro {
     // Classe global para armazenar variáveis globais
     static class Global {
         private static string _currentUser = "";
+        private static string _currentUserName = "";
 		private static bool _adm = false;
         private static Size _formSize = new Size(0, 0);
         private static bool _formMaximized = false;
@@ -41,7 +42,6 @@ namespace JetSalePro {
             }else {
                 _formMaximized = false;
             }
-
         }
     }
 }
