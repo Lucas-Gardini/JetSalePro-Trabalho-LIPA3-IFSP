@@ -163,6 +163,7 @@
             this.criado_em,
             this.atualizado_em});
 			this.DataGridViewSales.Location = new System.Drawing.Point(13, 56);
+			this.DataGridViewSales.MultiSelect = false;
 			this.DataGridViewSales.Name = "DataGridViewSales";
 			this.DataGridViewSales.ReadOnly = true;
 			this.DataGridViewSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
