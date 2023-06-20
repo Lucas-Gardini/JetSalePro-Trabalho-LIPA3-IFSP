@@ -114,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
+    <Compile Include="pages\Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\Sale.Designer.cs">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\popups\AddEditSearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,7 +196,11 @@
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Clients.cs" />
     <Compile Include="services\Products.cs" />
+    <Compile Include="services\Sales.cs" />
     <Compile Include="services\User.cs" />
+    <EmbeddedResource Include="pages\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\popups\AddEditSearchClient.resx">
       <DependentUpon>AddEditSearchClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +305,7 @@
     </None>
     <None Include="assets\images\icons\clients.png" />
     <None Include="assets\images\Logo_Round.png" />
+    <None Include="assets\images\icons\money.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

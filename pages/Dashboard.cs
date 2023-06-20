@@ -84,7 +84,13 @@ namespace JetSalePro {
 			new Thread(() => Application.Run(new Client())).Start();
 		}
 
-        private void Logout() {
+		private void ButtonSales_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			new Thread(() => Application.Run(new Sale())).Start();
+		}
+
+		private void Logout() {
             Global.CurrentUser = null;
             Global.Adm = false;
 
@@ -151,5 +157,5 @@ namespace JetSalePro {
         private void ButtonClients_MouseLeave(object sender, EventArgs e) {
             LabelClients.Hide();
         }
-    }
+	}
 }
