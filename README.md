@@ -11,15 +11,15 @@
 - [x] Cadastro
 - [x] Exclusão
 - [x] Edição
-- [ ] Pesquisa
+- [x] Pesquisa
 ## Clientes
 - [x] Listagem
-- [ ] Cadastro
+- [x] Cadastro
 - [x] Exclusão
-- [ ] Edição
-- [ ] Pesquisa
+- [x] Edição
+- [x] Pesquisa
 ## Vendas
-- [ ] Listagem
+- [x] Listagem
 - [ ] Cadastro
 - [ ] Exclusão
 - [ ] Edição
@@ -28,4 +28,4 @@
 - [ ] Pesquisa
 ## Autenticação
 - [x] Logar
-- [ ] Deslogar
+- [x] Deslogar
