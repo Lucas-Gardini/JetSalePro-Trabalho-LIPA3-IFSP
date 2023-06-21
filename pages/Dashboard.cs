@@ -72,25 +72,22 @@ namespace JetSalePro {
                 Global.FormResize(this);
         }
 
-		private void ButtonProdutos_Click(object sender, EventArgs e)
-		{
-			this.Close();
-			new Thread(() => Application.Run(new Product())).Start();
-		}
+        private void ButtonProdutos_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Product())).Start();
+        }
 
-		private void ButtonClientes_Click(object sender, EventArgs e)
-		{
-			this.Close();
-			new Thread(() => Application.Run(new Client())).Start();
-		}
+        private void ButtonClientes_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Client())).Start();
+        }
 
-		private void ButtonSales_Click(object sender, EventArgs e)
-		{
-			this.Close();
-			new Thread(() => Application.Run(new Sale())).Start();
-		}
+        private void ButtonSales_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Sale())).Start();
+        }
 
-		private void Logout() {
+        private void Logout() {
             Global.CurrentUser = null;
             Global.Adm = false;
 
@@ -157,5 +154,5 @@ namespace JetSalePro {
         private void ButtonClients_MouseLeave(object sender, EventArgs e) {
             LabelClients.Hide();
         }
-	}
+    }
 }

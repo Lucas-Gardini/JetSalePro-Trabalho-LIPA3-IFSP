@@ -114,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
+    <Compile Include="pages\popups\AddEditSearchSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\popups\AddEditSearchSales.Designer.cs">
+      <DependentUpon>AddEditSearchSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\Sale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,8 +202,12 @@
     <Compile Include="services\Database.cs" />
     <Compile Include="services\Clients.cs" />
     <Compile Include="services\Products.cs" />
+    <Compile Include="services\ItemsSales.cs" />
     <Compile Include="services\Sales.cs" />
     <Compile Include="services\User.cs" />
+    <EmbeddedResource Include="pages\popups\AddEditSearchSales.resx">
+      <DependentUpon>AddEditSearchSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +316,10 @@
     <None Include="assets\images\icons\clients.png" />
     <None Include="assets\images\Logo_Round.png" />
     <None Include="assets\images\icons\money.png" />
+    <None Include="assets\images\buttons\remove.png" />
+    <None Include="assets\images\buttons\plus.png" />
+    <None Include="assets\images\buttons\minus.png" />
+    <None Include="assets\images\buttons\add.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
