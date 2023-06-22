@@ -108,6 +108,44 @@ namespace JetSalePro.services {
                 connection.Close();
             }
         }
-        #endregion
-    }
+		#endregion
+
+		#region Funções para relatório
+		public static async Task<DataTable> GetProductsMoreSale(string WHERE = null)
+		{
+			MySqlConnection connection = await Database.GetConnectionAsync(true);
+
+			// 10 produtos mais vendidos
+			string query = "select SUM(iv.quantidade), v.data_venda, p.descricao ";
+			query += "from produtos p, vendas v, itens_venda iv ";
+			query += $"where v.codigo_venda = iv.codigo_venda AND iv.codigo_produto = p.codigo_produto AND {WHERE} ";
+			query += "GROUP BY p.codigo_produto ORDER BY SUM(iv.quantidade) DESC LIMIT 10";
+			
+			MySqlCommand command = new MySqlCommand(query, connection);
+
+			try
+			{
+				// Instância do DataTable (contém os dados) e do adapter (executa a query)
+				DataTable dataTable = new DataTable();
+
+				// Executando a query e preenchendo o DataTable
+				MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+
+				// Preenchendo o DataTable
+				await adapter.FillAsync(dataTable);
+
+				return dataTable;
+			}
+			catch (Exception ex)
+			{
+				new Alert("Usuários", ex.Message).ShowDialog();
+				return null;
+			}
+			finally
+			{
+				connection.Close();
+			}
+		}
+		#endregion
+	}
 }

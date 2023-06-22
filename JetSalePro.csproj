@@ -114,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.cs" />
+    <Compile Include="pages\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\popups\AddEditSearchSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     <Compile Include="services\ItemsSales.cs" />
     <Compile Include="services\Sales.cs" />
     <Compile Include="services\User.cs" />
+    <EmbeddedResource Include="pages\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\popups\AddEditSearchSales.resx">
       <DependentUpon>AddEditSearchSales.cs</DependentUpon>
     </EmbeddedResource>
