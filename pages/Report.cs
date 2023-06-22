@@ -36,6 +36,8 @@ namespace JetSalePro {
 			LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
 			DataGridViewProductsMoreSale.Rows.Clear();
+			LabelQuantVendas.Text = "";
+			LabelValorVendas.Text = "";
 
 			loadingForm.Close();
 			_loaded = true;
@@ -72,6 +74,14 @@ namespace JetSalePro {
 			{
 				DataGridViewProductsMoreSale.Rows.Add(row.ItemArray);
 			}
+
+			// Obtendo total de vendas em determinado período
+			int salesCount = await SalesTotals.GetSalesCount(where);
+			LabelQuantVendas.Text = salesCount.ToString();
+
+			// Obtendo o valor total das vendas em determinado período
+			float salesSum = await SalesTotals.GetSalesSum(where);
+			LabelValorVendas.Text = salesSum.ToString();
 
 			loadingForm.Close();
 		}

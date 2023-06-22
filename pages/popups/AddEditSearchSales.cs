@@ -400,7 +400,7 @@ namespace JetSalePro {
                 loading.Close();
 
                 AddEditSearchSales_Load(sender, e);
-            }
+			}
         }
 
         private async void ButtonMinus_Click(object sender, EventArgs e) {

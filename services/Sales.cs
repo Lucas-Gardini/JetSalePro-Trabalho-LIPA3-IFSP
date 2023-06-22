@@ -112,7 +112,6 @@ namespace JetSalePro.services {
                 connection.Close();
             }
         }
-        #endregion
-
-    }
+		#endregion
+	}
 }

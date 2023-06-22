@@ -58,6 +58,11 @@
 			this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.criado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.atualizado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.LabelQuantVendas = new System.Windows.Forms.Label();
+			this.LabelTituloQuantVenda = new System.Windows.Forms.Label();
+			this.LabelValorVendas = new System.Windows.Forms.Label();
+			this.LabelTituloValorVenda = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.PictureReset)).BeginInit();
@@ -144,7 +149,7 @@
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.clients1;
+			this.pictureBox2.Image = global::JetSalePro.Properties.Resources.report;
 			this.pictureBox2.Location = new System.Drawing.Point(815, 12);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(40, 38);
@@ -340,7 +345,7 @@
 			// 
 			// quantidade
 			// 
-			this.quantidade.HeaderText = "Quantidade";
+			this.quantidade.HeaderText = "Quantidade no Estoque";
 			this.quantidade.Name = "quantidade";
 			this.quantidade.ReadOnly = true;
 			// 
@@ -356,12 +361,74 @@
 			this.atualizado_em.Name = "atualizado_em";
 			this.atualizado_em.ReadOnly = true;
 			// 
+			// LabelQuantVendas
+			// 
+			this.LabelQuantVendas.AutoSize = true;
+			this.LabelQuantVendas.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.LabelQuantVendas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+			this.LabelQuantVendas.ForeColor = System.Drawing.Color.ForestGreen;
+			this.LabelQuantVendas.Location = new System.Drawing.Point(233, 137);
+			this.LabelQuantVendas.Name = "LabelQuantVendas";
+			this.LabelQuantVendas.Size = new System.Drawing.Size(15, 19);
+			this.LabelQuantVendas.TabIndex = 108;
+			this.LabelQuantVendas.Text = "-";
+			// 
+			// LabelTituloQuantVenda
+			// 
+			this.LabelTituloQuantVenda.AutoSize = true;
+			this.LabelTituloQuantVenda.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.LabelTituloQuantVenda.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LabelTituloQuantVenda.Location = new System.Drawing.Point(12, 131);
+			this.LabelTituloQuantVenda.Name = "LabelTituloQuantVenda";
+			this.LabelTituloQuantVenda.Size = new System.Drawing.Size(215, 25);
+			this.LabelTituloQuantVenda.TabIndex = 107;
+			this.LabelTituloQuantVenda.Text = "Quantidade de vendas:";
+			// 
+			// LabelValorVendas
+			// 
+			this.LabelValorVendas.AutoSize = true;
+			this.LabelValorVendas.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.LabelValorVendas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+			this.LabelValorVendas.ForeColor = System.Drawing.Color.ForestGreen;
+			this.LabelValorVendas.Location = new System.Drawing.Point(550, 137);
+			this.LabelValorVendas.Name = "LabelValorVendas";
+			this.LabelValorVendas.Size = new System.Drawing.Size(15, 19);
+			this.LabelValorVendas.TabIndex = 110;
+			this.LabelValorVendas.Text = "-";
+			// 
+			// LabelTituloValorVenda
+			// 
+			this.LabelTituloValorVenda.AutoSize = true;
+			this.LabelTituloValorVenda.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.LabelTituloValorVenda.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.LabelTituloValorVenda.Location = new System.Drawing.Point(332, 131);
+			this.LabelTituloValorVenda.Name = "LabelTituloValorVenda";
+			this.LabelTituloValorVenda.Size = new System.Drawing.Size(212, 25);
+			this.LabelTituloValorVenda.TabIndex = 109;
+			this.LabelTituloValorVenda.Text = "Valor total das vendas:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(12, 177);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(231, 25);
+			this.label4.TabIndex = 111;
+			this.label4.Text = "Produtos mais vendidos:";
+			// 
 			// Report
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(968, 553);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.LabelValorVendas);
+			this.Controls.Add(this.LabelTituloValorVenda);
+			this.Controls.Add(this.LabelQuantVendas);
+			this.Controls.Add(this.LabelTituloQuantVenda);
 			this.Controls.Add(this.DataGridViewProductsMoreSale);
 			this.Controls.Add(this.ButtonSearch);
 			this.Controls.Add(this.DatePickerFim);
@@ -423,6 +490,11 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
 		private System.Windows.Forms.DataGridViewTextBoxColumn criado_em;
 		private System.Windows.Forms.DataGridViewTextBoxColumn atualizado_em;
+		private System.Windows.Forms.Label LabelQuantVendas;
+		private System.Windows.Forms.Label LabelTituloQuantVenda;
+		private System.Windows.Forms.Label LabelValorVendas;
+		private System.Windows.Forms.Label LabelTituloValorVenda;
+		private System.Windows.Forms.Label label4;
 	}
 }
 

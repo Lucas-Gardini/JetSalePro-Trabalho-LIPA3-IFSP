@@ -210,6 +210,7 @@
     <Compile Include="services\Products.cs" />
     <Compile Include="services\ItemsSales.cs" />
     <Compile Include="services\Sales.cs" />
+    <Compile Include="services\SalesTotals.cs" />
     <Compile Include="services\User.cs" />
     <EmbeddedResource Include="pages\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
@@ -333,6 +334,7 @@
     <None Include="assets\images\Dash-User.png" />
     <None Include="assets\images\IFSP.png" />
     <None Include="assets\images\JhonesChad.png" />
+    <None Include="assets\images\icons\report.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -138,7 +138,7 @@ namespace JetSalePro.services {
 			}
 			catch (Exception ex)
 			{
-				new Alert("Usuários", ex.Message).ShowDialog();
+				new Alert("Produtos", ex.Message).ShowDialog();
 				return null;
 			}
 			finally
