@@ -11,21 +11,21 @@
 - [x] Cadastro
 - [x] Exclusão
 - [x] Edição
-- [ ] Pesquisa
+- [x] Pesquisa
 ## Clientes
+- [x] Listagem
+- [x] Cadastro
+- [x] Exclusão
+- [x] Edição
+- [x] Pesquisa
+## Vendas
 - [x] Listagem
 - [ ] Cadastro
 - [x] Exclusão
-- [ ] Edição
-- [ ] Pesquisa
-## Vendas
-- [ ] Listagem
-- [ ] Cadastro
-- [ ] Exclusão
-- [ ] Edição
-- [ ] Pesquisa
+- [x] Edição
+- [-] Pesquisa
 ## Relatórios
 - [ ] Pesquisa
 ## Autenticação
 - [x] Logar
-- [ ] Deslogar
+- [x] Deslogar

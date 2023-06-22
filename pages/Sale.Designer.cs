@@ -1,6 +1,6 @@
 ﻿namespace JetSalePro
 {
-	partial class Client
+	partial class Sale
 	{
 		/// <summary>
 		/// Variável de designer necessária.
@@ -29,37 +29,26 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
             this.AppPalette = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.LabelCopy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DataGridViewClients = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.civil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nacionalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.whatsapp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.criado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewSales = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.codigo_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_itens = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forma_pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.criado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atualizado_em = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PictureAdd = new System.Windows.Forms.PictureBox();
             this.PictureSearch = new System.Windows.Forms.PictureBox();
             this.PictureDelete = new System.Windows.Forms.PictureBox();
@@ -67,7 +56,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PictureReset = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).BeginInit();
@@ -147,194 +136,117 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(696, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 25);
+            this.label2.Size = new System.Drawing.Size(184, 25);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Controle de clientes";
+            this.label2.Text = "Controle de vendas";
             // 
-            // DataGridViewClients
+            // DataGridViewSales
             // 
-            this.DataGridViewClients.AllowUserToAddRows = false;
-            this.DataGridViewClients.AllowUserToDeleteRows = false;
-            this.DataGridViewClients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DataGridViewSales.AllowUserToAddRows = false;
+            this.DataGridViewSales.AllowUserToDeleteRows = false;
+            this.DataGridViewSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridViewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.nome,
-            this.ativo,
-            this.cpf,
-            this.rg,
-            this.generoS,
-            this.nascimento,
-            this.civil,
-            this.profissao,
-            this.nacionalidade,
-            this.tel,
-            this.cel,
-            this.whatsapp,
-            this.email,
-            this.rua,
-            this.n,
-            this.complemento,
-            this.bairro,
-            this.cidade,
-            this.UF,
-            this.cep,
-            this.obs,
-            this.criado,
-            this.atualizado});
-            this.DataGridViewClients.Location = new System.Drawing.Point(13, 56);
-            this.DataGridViewClients.MultiSelect = false;
-            this.DataGridViewClients.Name = "DataGridViewClients";
-            this.DataGridViewClients.ReadOnly = true;
-            this.DataGridViewClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewClients.Size = new System.Drawing.Size(823, 366);
-            this.DataGridViewClients.TabIndex = 12;
+            this.DataGridViewSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo_venda,
+            this.codigo_cliente,
+            this.codigo_usuario,
+            this.data_venda,
+            this.total_itens,
+            this.subtotal,
+            this.desconto,
+            this.valor_total,
+            this.forma_pagamento,
+            this.situacao,
+            this.observacoes,
+            this.criado_em,
+            this.atualizado_em});
+            this.DataGridViewSales.Location = new System.Drawing.Point(13, 56);
+            this.DataGridViewSales.MultiSelect = false;
+            this.DataGridViewSales.Name = "DataGridViewSales";
+            this.DataGridViewSales.ReadOnly = true;
+            this.DataGridViewSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridViewSales.Size = new System.Drawing.Size(823, 366);
+            this.DataGridViewSales.TabIndex = 12;
             // 
-            // codigo
+            // codigo_venda
             // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
+            this.codigo_venda.HeaderText = "Cod. Venda";
+            this.codigo_venda.Name = "codigo_venda";
+            this.codigo_venda.ReadOnly = true;
             // 
-            // nome
+            // codigo_cliente
             // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
+            this.codigo_cliente.HeaderText = "Cod. Cliente";
+            this.codigo_cliente.Name = "codigo_cliente";
+            this.codigo_cliente.ReadOnly = true;
             // 
-            // ativo
+            // codigo_usuario
             // 
-            this.ativo.HeaderText = "Ativo";
-            this.ativo.Name = "ativo";
-            this.ativo.ReadOnly = true;
+            this.codigo_usuario.HeaderText = "Cod. Usuário";
+            this.codigo_usuario.Name = "codigo_usuario";
+            this.codigo_usuario.ReadOnly = true;
             // 
-            // cpf
+            // data_venda
             // 
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            this.cpf.ReadOnly = true;
+            this.data_venda.HeaderText = "Data Venda";
+            this.data_venda.Name = "data_venda";
+            this.data_venda.ReadOnly = true;
             // 
-            // rg
+            // total_itens
             // 
-            this.rg.HeaderText = "RG";
-            this.rg.Name = "rg";
-            this.rg.ReadOnly = true;
+            this.total_itens.HeaderText = "Total de Itens";
+            this.total_itens.Name = "total_itens";
+            this.total_itens.ReadOnly = true;
             // 
-            // generoS
+            // subtotal
             // 
-            this.generoS.HeaderText = "Gênero";
-            this.generoS.Name = "generoS";
-            this.generoS.ReadOnly = true;
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
             // 
-            // nascimento
+            // desconto
             // 
-            this.nascimento.HeaderText = "Data Nasc.";
-            this.nascimento.Name = "nascimento";
-            this.nascimento.ReadOnly = true;
+            this.desconto.HeaderText = "Desconto";
+            this.desconto.Name = "desconto";
+            this.desconto.ReadOnly = true;
             // 
-            // civil
+            // valor_total
             // 
-            this.civil.HeaderText = "Estado Civil";
-            this.civil.Name = "civil";
-            this.civil.ReadOnly = true;
+            this.valor_total.HeaderText = "Valor Total";
+            this.valor_total.Name = "valor_total";
+            this.valor_total.ReadOnly = true;
             // 
-            // profissao
+            // forma_pagamento
             // 
-            this.profissao.HeaderText = "Profissão";
-            this.profissao.Name = "profissao";
-            this.profissao.ReadOnly = true;
+            this.forma_pagamento.HeaderText = "Forma Pagamento";
+            this.forma_pagamento.Name = "forma_pagamento";
+            this.forma_pagamento.ReadOnly = true;
             // 
-            // nacionalidade
+            // situacao
             // 
-            this.nacionalidade.HeaderText = "Nacionalidade";
-            this.nacionalidade.Name = "nacionalidade";
-            this.nacionalidade.ReadOnly = true;
+            this.situacao.HeaderText = "Situação";
+            this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
             // 
-            // tel
+            // observacoes
             // 
-            this.tel.HeaderText = "Telefone";
-            this.tel.Name = "tel";
-            this.tel.ReadOnly = true;
+            this.observacoes.HeaderText = "Observações";
+            this.observacoes.Name = "observacoes";
+            this.observacoes.ReadOnly = true;
             // 
-            // cel
+            // criado_em
             // 
-            this.cel.HeaderText = "Celular";
-            this.cel.Name = "cel";
-            this.cel.ReadOnly = true;
+            this.criado_em.HeaderText = "Criado em";
+            this.criado_em.Name = "criado_em";
+            this.criado_em.ReadOnly = true;
             // 
-            // whatsapp
+            // atualizado_em
             // 
-            this.whatsapp.HeaderText = "Whatsapp";
-            this.whatsapp.Name = "whatsapp";
-            this.whatsapp.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // rua
-            // 
-            this.rua.HeaderText = "Rua";
-            this.rua.Name = "rua";
-            this.rua.ReadOnly = true;
-            // 
-            // n
-            // 
-            this.n.HeaderText = "Nº";
-            this.n.Name = "n";
-            this.n.ReadOnly = true;
-            // 
-            // complemento
-            // 
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            this.complemento.ReadOnly = true;
-            // 
-            // bairro
-            // 
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.ReadOnly = true;
-            // 
-            // cidade
-            // 
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            this.cidade.ReadOnly = true;
-            // 
-            // UF
-            // 
-            this.UF.HeaderText = "UF";
-            this.UF.Name = "UF";
-            this.UF.ReadOnly = true;
-            // 
-            // cep
-            // 
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            this.cep.ReadOnly = true;
-            // 
-            // obs
-            // 
-            this.obs.HeaderText = "Obs";
-            this.obs.Name = "obs";
-            this.obs.ReadOnly = true;
-            // 
-            // criado
-            // 
-            this.criado.HeaderText = "Criado em";
-            this.criado.Name = "criado";
-            this.criado.ReadOnly = true;
-            // 
-            // atualizado
-            // 
-            this.atualizado.HeaderText = "Atualizado em";
-            this.atualizado.Name = "atualizado";
-            this.atualizado.ReadOnly = true;
+            this.atualizado_em.HeaderText = "Atualizado em";
+            this.atualizado_em.Name = "atualizado_em";
+            this.atualizado_em.ReadOnly = true;
             // 
             // PictureAdd
             // 
@@ -396,7 +308,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::JetSalePro.Properties.Resources.clients1;
+            this.pictureBox2.Image = global::JetSalePro.Properties.Resources.money;
             this.pictureBox2.Location = new System.Drawing.Point(656, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 38);
@@ -419,7 +331,7 @@
             this.PictureReset.WaitOnLoad = true;
             this.PictureReset.Click += new System.EventHandler(this.PictureReset_Click);
             // 
-            // Client
+            // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -431,14 +343,14 @@
             this.Controls.Add(this.PictureDelete);
             this.Controls.Add(this.PictureSearch);
             this.Controls.Add(this.PictureAdd);
-            this.Controls.Add(this.DataGridViewClients);
+            this.Controls.Add(this.DataGridViewSales);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LabelCopy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(540, 500);
-            this.Name = "Client";
+            this.Name = "Sale";
             this.Palette = this.AppPalette;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -446,7 +358,7 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.Resize += new System.EventHandler(this.UserManagement_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDelete)).EndInit();
@@ -465,37 +377,26 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewClients;
+		private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewSales;
 		private System.Windows.Forms.PictureBox PictureAdd;
 		private System.Windows.Forms.PictureBox PictureSearch;
 		private System.Windows.Forms.PictureBox PictureDelete;
 		private System.Windows.Forms.PictureBox PictureEdit;
 		private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox PictureReset;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn generoS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nascimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn civil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profissao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cel;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn whatsapp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n;
-        private System.Windows.Forms.DataGridViewTextBoxColumn complemento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn criado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn atualizado;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn codigo_venda;
+		private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cliente;
+		private System.Windows.Forms.DataGridViewTextBoxColumn codigo_usuario;
+		private System.Windows.Forms.DataGridViewTextBoxColumn data_venda;
+		private System.Windows.Forms.DataGridViewTextBoxColumn total_itens;
+		private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+		private System.Windows.Forms.DataGridViewTextBoxColumn desconto;
+		private System.Windows.Forms.DataGridViewTextBoxColumn valor_total;
+		private System.Windows.Forms.DataGridViewTextBoxColumn forma_pagamento;
+		private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
+		private System.Windows.Forms.DataGridViewTextBoxColumn observacoes;
+		private System.Windows.Forms.DataGridViewTextBoxColumn criado_em;
+		private System.Windows.Forms.DataGridViewTextBoxColumn atualizado_em;
+	}
 }
 

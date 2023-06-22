@@ -5,20 +5,19 @@ namespace JetSalePro {
     // Classe global para armazenar variáveis globais
     static class Global {
         private static string _currentUser = "";
-        private static string _currentUserName = "";
-		private static bool _adm = false;
+        private static bool _adm = false;
         private static Size _formSize = new Size(0, 0);
         private static bool _formMaximized = false;
 
-		public static string CurrentUser {
+        public static string CurrentUser {
             get { return _currentUser; }
             set { _currentUser = value; }
         }
 
-		public static bool Adm {
-			get { return _adm; }
-			set { _adm = value; }
-		}
+        public static bool Adm {
+            get { return _adm; }
+            set { _adm = value; }
+        }
 
         public static Size FormSize {
             get { return _formSize; }
@@ -39,7 +38,7 @@ namespace JetSalePro {
 
             if (_formSize.Width >= area.Width - 100) {
                 _formMaximized = true;
-            }else {
+            } else {
                 _formMaximized = false;
             }
         }

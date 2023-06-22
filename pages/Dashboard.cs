@@ -16,9 +16,14 @@ namespace JetSalePro {
         }
 
         private async void Dashboard_Load(object sender, EventArgs e) {
+            if (Global.Adm) {
+                pictureBox1.Image = Properties.Resources.Dash_Adm1;
+            }
+
             var loadingForm = new Loading();
             loadingForm.Show();
 
+            LabelUser.Hide();
             LabelLogout.Hide();
             LabelSell.Hide();
             LabelReports.Hide();
@@ -60,6 +65,8 @@ namespace JetSalePro {
 
             this.Show();
             this.Activate();
+
+            LabelUser.Show();
         }
 
         private void ButtonLiberacaoUsers_Click(object sender, EventArgs e) {
@@ -72,19 +79,28 @@ namespace JetSalePro {
                 Global.FormResize(this);
         }
 
-		private void ButtonProdutos_Click(object sender, EventArgs e)
+        private void ButtonProdutos_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Product())).Start();
+        }
+
+        private void ButtonClientes_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Client())).Start();
+        }
+
+        private void ButtonSales_Click(object sender, EventArgs e) {
+            this.Close();
+            new Thread(() => Application.Run(new Sale())).Start();
+        }
+
+		private void ButtonReports_Click(object sender, EventArgs e)
 		{
 			this.Close();
-			new Thread(() => Application.Run(new Product())).Start();
+			new Thread(() => Application.Run(new Report())).Start();
 		}
 
-		private void ButtonClientes_Click(object sender, EventArgs e)
-		{
-			this.Close();
-			new Thread(() => Application.Run(new Client())).Start();
-		}
-
-        private void Logout() {
+		private void Logout() {
             Global.CurrentUser = null;
             Global.Adm = false;
 
@@ -151,5 +167,5 @@ namespace JetSalePro {
         private void ButtonClients_MouseLeave(object sender, EventArgs e) {
             LabelClients.Hide();
         }
-    }
+	}
 }

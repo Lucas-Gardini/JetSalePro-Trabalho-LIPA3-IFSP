@@ -171,6 +171,11 @@ namespace JetSalePro {
         }
 
         private async void PictureDelete_Click(object sender, EventArgs e) {
+            if (!Global.Adm) {
+                new Alert("Acesso restrito!", "Você não tem permissão para realizar a seguinte ação: [Exclusão]").ShowDialog();
+                return;
+            }
+
             var id = DataGridViewClients.SelectedCells[0].Value.ToString();
             var cliente = DataGridViewClients.SelectedCells[1].Value.ToString();
 

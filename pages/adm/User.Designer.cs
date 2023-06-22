@@ -148,6 +148,7 @@
             this.criado_em,
             this.atualizado_em});
             this.DataGridViewUsers.Location = new System.Drawing.Point(13, 56);
+            this.DataGridViewUsers.MultiSelect = false;
             this.DataGridViewUsers.Name = "DataGridViewUsers";
             this.DataGridViewUsers.ReadOnly = true;
             this.DataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -280,7 +281,7 @@
             // 
             // PictureReset
             // 
-            this.PictureReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureReset.Image = global::JetSalePro.Properties.Resources.reset_search;
             this.PictureReset.Location = new System.Drawing.Point(854, 56);
