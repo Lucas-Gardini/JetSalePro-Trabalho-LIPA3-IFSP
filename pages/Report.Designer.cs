@@ -45,7 +45,8 @@
 			this.DataGridViewProductsMoreSale = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
 			this.codigoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.codBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.quantidade_vendida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.codigo_barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Largura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -242,7 +243,8 @@
 			this.DataGridViewProductsMoreSale.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoProduto,
             this.descricao,
-            this.codBarras,
+            this.quantidade_vendida,
+            this.codigo_barras,
             this.marca,
             this.peso,
             this.Largura,
@@ -274,11 +276,17 @@
 			this.descricao.Name = "descricao";
 			this.descricao.ReadOnly = true;
 			// 
-			// codBarras
+			// quantidade_vendida
 			// 
-			this.codBarras.HeaderText = "Cod. Barras";
-			this.codBarras.Name = "codBarras";
-			this.codBarras.ReadOnly = true;
+			this.quantidade_vendida.HeaderText = "Quant. Vendida";
+			this.quantidade_vendida.Name = "quantidade_vendida";
+			this.quantidade_vendida.ReadOnly = true;
+			// 
+			// codigo_barras
+			// 
+			this.codigo_barras.HeaderText = "Cod Barras";
+			this.codigo_barras.Name = "codigo_barras";
+			this.codigo_barras.ReadOnly = true;
 			// 
 			// marca
 			// 
@@ -402,7 +410,8 @@
 		private ComponentFactory.Krypton.Toolkit.KryptonDataGridView DataGridViewProductsMoreSale;
 		private System.Windows.Forms.DataGridViewTextBoxColumn codigoProduto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-		private System.Windows.Forms.DataGridViewTextBoxColumn codBarras;
+		private System.Windows.Forms.DataGridViewTextBoxColumn quantidade_vendida;
+		private System.Windows.Forms.DataGridViewTextBoxColumn codigo_barras;
 		private System.Windows.Forms.DataGridViewTextBoxColumn marca;
 		private System.Windows.Forms.DataGridViewTextBoxColumn peso;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Largura;

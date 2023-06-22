@@ -35,6 +35,8 @@ namespace JetSalePro {
 
 			LabelCopy.Text = $"© {DateTime.Now.Year} JetSale Pro";
 
+			DataGridViewProductsMoreSale.Rows.Clear();
+
 			loadingForm.Close();
 			_loaded = true;
 		}

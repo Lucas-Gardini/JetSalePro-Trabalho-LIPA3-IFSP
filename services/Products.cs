@@ -116,7 +116,7 @@ namespace JetSalePro.services {
 			MySqlConnection connection = await Database.GetConnectionAsync(true);
 
 			// 10 produtos mais vendidos
-			string query = "select SUM(iv.quantidade), v.data_venda, p.descricao ";
+			string query = "select p.codigo_produto, p.descricao, SUM(iv.quantidade), p.codigo_barras, p.marca, p.peso, p.largura, p.altura, p.profundidade, p.situacao, p.condicao, p.preco_venda, p.quantidade_estoque, p.criado_em, p.atualizado_em ";
 			query += "from produtos p, vendas v, itens_venda iv ";
 			query += $"where v.codigo_venda = iv.codigo_venda AND iv.codigo_produto = p.codigo_produto AND {WHERE} ";
 			query += "GROUP BY p.codigo_produto ORDER BY SUM(iv.quantidade) DESC LIMIT 10";
