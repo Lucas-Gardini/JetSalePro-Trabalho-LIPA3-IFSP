@@ -49,11 +49,49 @@ namespace JetSalePro.services {
         }
 
         public static async Task<bool> CreateSale(Sales sale) {
-            return false;
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
+
+            MySqlCommand command = new MySqlCommand($@"INSERT INTO vendas 
+                (codigo_usuario, codigo_cliente, data_venda, total_itens, subtotal, desconto, valor_total, forma_pagamento, situacao, observacoes)
+                VALUES 
+                ({sale.CodigoUsuario}, {sale.CodigoCliente}, '{((DateTime)sale.DataVenda).ToString("s")}', {sale.TotalItens}, {sale.Subtotal.ToString().Replace(",", ".")}, {sale.Desconto.ToString().Replace(",", ".")}, {sale.ValorTotal.ToString().Replace(",", ".")}, '{sale.FormaPagamento}', '{sale.Situacao}', '{sale.Obs}')", connection);
+
+            try {
+                await command.ExecuteNonQueryAsync();
+                return true;
+            } catch (Exception ex) {
+                new Alert("Venda", ex.Message).ShowDialog();
+                return false;
+            } finally {
+                connection.Close();
+            }
         }
 
         public static async Task<bool> UpdateSale(Sales sale) {
-            return false;
+            MySqlConnection connection = await Database.GetConnectionAsync(true);
+
+            MySqlCommand command = new MySqlCommand($@"UPDATE vendas SET 
+                codigo_usuario = {sale.CodigoUsuario}, 
+                codigo_cliente = {sale.CodigoCliente}, 
+                data_venda = '{((DateTime)sale.DataVenda).ToString("s")}', 
+                total_itens = {sale.TotalItens}, 
+                subtotal = {sale.Subtotal.ToString().Replace(",", ".")}, 
+                desconto = {sale.Desconto.ToString().Replace(",", ".")}, 
+                valor_total = {sale.ValorTotal.ToString().Replace(",", ".")}, 
+                forma_pagamento = '{sale.FormaPagamento}', 
+                situacao = '{sale.Situacao}', 
+                observacoes = '{sale.Obs}' 
+                WHERE codigo_venda = {sale.CodigoVenda}", connection);
+
+            try {
+                await command.ExecuteNonQueryAsync();
+                return true;
+            } catch (Exception ex) {
+                new Alert("Venda", ex.Message).ShowDialog();
+                return false;
+            } finally {
+                connection.Close();
+            }
         }
 
         public static async Task<bool> DeleteSale(string id) {

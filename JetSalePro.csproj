@@ -320,6 +320,10 @@
     <None Include="assets\images\buttons\plus.png" />
     <None Include="assets\images\buttons\minus.png" />
     <None Include="assets\images\buttons\add.png" />
+    <None Include="assets\images\Dash-Adm.png" />
+    <None Include="assets\images\Dash-User.png" />
+    <None Include="assets\images\IFSP.png" />
+    <None Include="assets\images\JhonesChad.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,9 +16,14 @@ namespace JetSalePro {
         }
 
         private async void Dashboard_Load(object sender, EventArgs e) {
+            if (Global.Adm) {
+                pictureBox1.Image = Properties.Resources.Dash_Adm1;
+            }
+
             var loadingForm = new Loading();
             loadingForm.Show();
 
+            LabelUser.Hide();
             LabelLogout.Hide();
             LabelSell.Hide();
             LabelReports.Hide();
@@ -60,6 +65,8 @@ namespace JetSalePro {
 
             this.Show();
             this.Activate();
+
+            LabelUser.Show();
         }
 
         private void ButtonLiberacaoUsers_Click(object sender, EventArgs e) {

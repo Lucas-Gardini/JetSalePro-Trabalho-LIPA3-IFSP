@@ -51,6 +51,16 @@ namespace JetSalePro {
                 ButtonMinus.Hide();
                 ButtonRemove.Hide();
                 ListBoxProducts.Hide();
+                LabelTotalWithDiscountTitle.Hide();
+                LabelTotalTitle.Hide();
+                LabelTotal.Hide();
+                LabelTotalWithDiscount.Hide();
+
+                TextBoxDesconto.ReadOnly = true;
+                TextBoxDesconto.StateCommon.Back.Color1 = Color.Gray;
+
+                TextBoxObservacoes.ReadOnly = true;
+                TextBoxObservacoes.StateCommon.Back.Color1 = Color.Gray;
             }
 
             _isSearch = isSearch;
@@ -103,6 +113,10 @@ namespace JetSalePro {
                         CurrentSale.Desconto = desconto;
                     }
 
+                    CurrentSale.Obs = sale.Rows[0]["observacoes"].ToString();
+                    CurrentSale.Situacao = sale.Rows[0]["situacao"].ToString();
+                    CurrentSale.FormaPagamento = sale.Rows[0]["forma_pagamento"].ToString();
+
                     TextBoxCod.Text = sale.Rows[0]["codigo_venda"].ToString();
 
                     // Obtendo o cliente selecionado, para selecioná-lo na combobox
@@ -115,6 +129,14 @@ namespace JetSalePro {
                         ComboBoxCliente.Items.Add($"{client[0]["codigo_cliente"]} - {client[0]["nome"]}");
                         ComboBoxCliente.SelectedIndex = ComboBoxCliente.Items.Count - 1;
                     }
+
+                    TextBoxCod.Text = CurrentSale.CodigoVenda.ToString();
+                    TextBoxDesconto.Text = CurrentSale.Desconto.ToString();
+                    TextBoxObservacoes.Text = CurrentSale.Obs;
+
+                    ComboBoxSituacao.Text = CurrentSale.Situacao;
+                    ComboBoxFormaPagamento.Text = CurrentSale.FormaPagamento;
+
                 } else {
                     new Alert("Produto", "Produto não encontrado!").ShowDialog();
                 }
@@ -133,6 +155,14 @@ namespace JetSalePro {
                     dynamic product = (await Products.GetProducts($"WHERE codigo_produto = {produto["codigo_produto"]}")).Rows[0];
 
                     ListBoxProducts.Items.Add($"{product["descricao"]} | {produto["quantidade"]}");
+                }
+
+                if (CurrentSale.Subtotal >= 0) {
+                    LabelTotal.Text = $"R$ {CurrentSale.Subtotal}";
+                }
+
+                if (CurrentSale.Subtotal >= 0) {
+                    LabelTotalWithDiscount.Text = $"R$ {CurrentSale.ValorTotal}";
                 }
             }
 
@@ -173,6 +203,15 @@ namespace JetSalePro {
                 CurrentSale.CodigoVenda = int.Parse(TextBoxCod?.Text);
             } catch { }
 
+            if (ComboBoxCliente.SelectedIndex != -1)
+                CurrentSale.CodigoCliente = int.Parse(ComboBoxCliente.SelectedItem.ToString().Split('-')[0].Trim());
+
+            if (ComboBoxFormaPagamento.SelectedIndex != -1)
+                CurrentSale.FormaPagamento = ComboBoxFormaPagamento.SelectedItem.ToString();
+
+            if (ComboBoxSituacao.SelectedIndex != -1)
+                CurrentSale.Situacao = ComboBoxSituacao.SelectedItem.ToString();
+
             if (_isSearch) {
                 loadingForm.Close();
                 DialogResult dialogResult = DialogResult.OK;
@@ -181,10 +220,53 @@ namespace JetSalePro {
                 return;
             };
 
+            dynamic user = (await services.User.GetUsers($"WHERE usuario = '{Global.CurrentUser}'")).Rows[0][0];
+            CurrentSale.CodigoUsuario = user;
+
+            if (!string.IsNullOrEmpty(TextBoxDesconto.Text))
+                CurrentSale.Desconto = float.Parse(TextBoxDesconto.Text);
+
+            if (!string.IsNullOrEmpty(TextBoxObservacoes.Text))
+                CurrentSale.Obs = TextBoxObservacoes.Text;
+
+            CurrentSale.TotalItens = 0;
+            CurrentSale.Subtotal = 0;
+            CurrentSale.ValorTotal = 0;
+
             bool sucesso;
             if (CurrentSale.CodigoVenda == -1) {
+                if (ComboBoxCliente.SelectedIndex == -1) {
+                    new Alert("Campo inválido!", "Selecione um cliente!").ShowDialog();
+                    loadingForm.Close();
+                    return;
+                }
+
+                try {
+                    CurrentSale.DataVenda = DateTime.Now;
+                } catch (Exception ex) {
+                    try {
+                        loadingForm.Close();
+                    } catch { }
+
+                    new Alert("Erro ao cadastrar venda", ex.Message).ShowDialog();
+                    return;
+                }
+
                 sucesso = await Sales.CreateSale(CurrentSale);
             } else {
+                var products = ListBoxProducts.Items;
+
+                foreach (var product in products) {
+                    string productName = product.ToString().Split('|')[0].Trim();
+                    var productQuantity = int.Parse(product.ToString().Split('|')[1].Trim());
+                    CurrentSale.TotalItens += productQuantity;
+
+                    dynamic productPrice = (await Products.GetProducts($"WHERE descricao = '{productName}'")).Rows[0]["preco_venda"];
+                    CurrentSale.Subtotal += productPrice * productQuantity;
+                }
+
+                CurrentSale.ValorTotal = CurrentSale.Subtotal - CurrentSale.Desconto;
+
                 sucesso = await Sales.UpdateSale(CurrentSale);
             }
 
@@ -352,6 +434,10 @@ namespace JetSalePro {
 
                 AddEditSearchSales_Load(sender, e);
             }
+        }
+
+        private void LabelAddProduct_Click(object sender, EventArgs e) {
+
         }
     }
 }

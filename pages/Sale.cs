@@ -39,9 +39,36 @@ namespace JetSalePro {
             var where = "";
 
             if (toSearch != null) {
-                //if (toSearch.CodigoClient != -1) {
-                //    where += $" codigo_cliente = {toSearch.CodigoClient} AND";
-                //}
+                if (toSearch.CodigoCliente != -1 && toSearch.CodigoCliente != 0) {
+                    where += $"WHERE codigo_cliente = {toSearch.CodigoCliente}";
+                }
+
+                if (toSearch.CodigoVenda != -1 && toSearch.CodigoVenda != 0) {
+                    if (where != "") {
+                        where += " AND ";
+                    } else {
+                        where += "WHERE ";
+                    }
+                    where += $"codigo_venda = {toSearch.CodigoVenda}";
+                }
+
+                if (!string.IsNullOrEmpty(toSearch.FormaPagamento)) {
+                    if (where != "") {
+                        where += " AND ";
+                    } else {
+                        where += "WHERE ";
+                    }
+                    where += $"forma_pagamento = '{toSearch.FormaPagamento}'";
+                }
+
+                if (!string.IsNullOrEmpty(toSearch.Situacao)) {
+                    if (where != "") {
+                        where += " AND ";
+                    } else {
+                        where += "WHERE ";
+                    }
+                    where += $"situacao = '{toSearch.Situacao}'";
+                }
             }
 
             // Obtendo os usuários
@@ -87,6 +114,11 @@ namespace JetSalePro {
         }
 
         private async void PictureDelete_Click(object sender, EventArgs e) {
+            if (!Global.Adm) {
+                new Alert("Acesso restrito!", "Você não tem permissão para realizar a seguinte ação: [Exclusão]").ShowDialog();
+                return;
+            }
+
             var id = DataGridViewSales.SelectedCells[0].Value.ToString();
 
             Alert dialog = new Alert("Excluir venda", $"Deseja realmente excluir a venda {id}?", true);

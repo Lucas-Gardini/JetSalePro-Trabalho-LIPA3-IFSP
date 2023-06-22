@@ -181,6 +181,46 @@ namespace JetSalePro.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dash_Adm {
+            get {
+                object obj = ResourceManager.GetObject("Dash-Adm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dash_Adm1 {
+            get {
+                object obj = ResourceManager.GetObject("Dash-Adm1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dash_Adm2 {
+            get {
+                object obj = ResourceManager.GetObject("Dash-Adm2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dash_User {
+            get {
+                object obj = ResourceManager.GetObject("Dash-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a CREATE DATABASE IF NOT EXISTS jet_sale_pro;
         ///
         ///USE jet_sale_pro;
@@ -247,6 +287,16 @@ namespace JetSalePro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IFSP {
+            get {
+                object obj = ResourceManager.GetObject("IFSP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Invisible {
             get {
                 object obj = ResourceManager.GetObject("Invisible", resourceCulture);
@@ -260,6 +310,16 @@ namespace JetSalePro.Properties {
         internal static System.Drawing.Bitmap Invisible1 {
             get {
                 object obj = ResourceManager.GetObject("Invisible1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap JhonesChad {
+            get {
+                object obj = ResourceManager.GetObject("JhonesChad", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
