@@ -21,9 +21,9 @@
 ## Vendas
 - [x] Listagem
 - [ ] Cadastro
-- [ ] Exclusão
-- [ ] Edição
-- [ ] Pesquisa
+- [x] Exclusão
+- [x] Edição
+- [-] Pesquisa
 ## Relatórios
 - [ ] Pesquisa
 ## Autenticação
