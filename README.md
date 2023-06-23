@@ -20,7 +20,7 @@
 - [x] Pesquisa
 ## Vendas
 - [x] Listagem
-- [ x] Cadastro
+- [x] Cadastro
 - [x] Exclusão
 - [x] Edição
 - [x] Pesquisa
