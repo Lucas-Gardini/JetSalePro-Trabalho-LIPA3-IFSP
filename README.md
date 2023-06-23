@@ -20,12 +20,15 @@
 - [x] Pesquisa
 ## Vendas
 - [x] Listagem
-- [ ] Cadastro
+- [ x] Cadastro
 - [x] Exclusão
 - [x] Edição
-- [-] Pesquisa
+- [x] Pesquisa
 ## Relatórios
-- [ ] Pesquisa
+- [x] Pesquisa
 ## Autenticação
 - [x] Logar
 - [x] Deslogar
+
+## Projeto
+- [X] Finalizado 
